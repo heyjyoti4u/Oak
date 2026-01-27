@@ -957,7 +957,7 @@
         
         <script src="js/custom.js"></script>
 
-       <script>
+      <script>
 document.addEventListener("DOMContentLoaded", function () {
 
     if (typeof travelData === "undefined") {
@@ -1008,17 +1008,13 @@ document.addEventListener("DOMContentLoaded", function () {
         container.innerHTML = html;
     }
 
-    // Row 1
-    fillRow("blog-row-1", 0, 4);
-
-    // Row 2
-    fillRow("blog-row-2", 4, 8);
-
-    // Row 3 (Trending)
-    fillRow("blog-row-3", 8, 12);
-
+    // Fill blog rows
+    fillRow("blog-row-1", 0, 4);   // Delhi, Kutch, Auli, Jaipur
+    fillRow("blog-row-2", 4, 8);   // Lakshadweep, Hampi, Varanasi, Munnar
+    fillRow("blog-row-3", 8, 12);  // Ayodhya, Tawang, Gokarna, Jaisalmer
 });
 </script>
+
 
     </body>
 </html>
