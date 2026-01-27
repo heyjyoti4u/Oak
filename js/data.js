@@ -41,9 +41,13 @@ const travelData = {
         ],
         story: {
             heading: "Where Earth Meets Sky",
-            content: "The Great Rann of Kutch is a seasonal salt marsh located in the Thar Desert. It is famous for the Rann Utsav, a carnival of music, dance, and culture that brings the white barren land to life under the moonlight."
+            content: "Rann Utsav Tent City, located near Dholavira in Gujarat, is set within one of the most ecologically and culturally rich landscapes in the world. This remarkable region offers an extraordinary blend of pristine natural beauty, deep-rooted cultural heritage, and vibrant traditional celebrations. Held annually, the Rann Utsav Festival beautifully captures this spirit, presenting a colourful showcase of music, dance, art, and festive experiences that highlight the grandeur of this unique destination. Under the moonlit sky, the White Desert transforms into a surreal wonderland, creating an unforgettable spectacle of nature’s magic.
+The White Rann is renowned for its lively cultural expressions, including folk dances, traditional music, and exquisite handicrafts. Visitors can discover fine textiles, intricate embroidery, bandhani sarees, traditional jewellery, and detailed mirror work that reflect Gujarat’s rich artistic legacy. Guests are warmly welcomed by local communities, whose traditions and way of life remain closely connected to the region’s natural surroundings.
+
+Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his iconic campaign, “Kutch Nahin Dekha Toh Kuch Nahi Dekha”, meaning “If you haven’t seen it, you haven’t truly seen anything.” This powerful message perfectly conveys the unmatched charm of the Rann Utsav Festival and the timeless beauty of this extraordinary destination."
         },
         places: [
+            {name: "Road to Heaven", img:"images/kutch-9.jpg"},
             { name: "White Desert", img: "images/kutch-1.jpg" },
             { name: "Kalo Dungar", img: "images/kutch-2.jpg" },
             { name: "Bhujodi", img: "images/kutch-3.jpg" },
