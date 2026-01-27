@@ -1,6 +1,7 @@
 // js/data.js
 
 const travelData = {
+
     // ROW 1
     "delhi": {
         name: "Delhi",
@@ -15,7 +16,7 @@ const travelData = {
         ],
         story: {
             heading: "A City of Cities",
-            content: "Delhi is a bridge between two worlds. Old Delhi, with its labyrinth of narrow lanes and old havelis, tells the story of the Mughals, while New Delhi, with its wide avenues and colonial architecture, speaks of the British Raj and modern democracy."
+            content: "Delhi is not a single city but a collection of many cities that have risen and fallen over thousands of years. Its story begins with Indraprastha, the legendary capital of the Pandavas mentioned in the Mahabharata. Over centuries, powerful dynasties such as the Delhi Sultanate and the Mughal Empire shaped its identity. The Qutub Minar symbolizes the beginning of Islamic rule, while Humayun’s Tomb introduced Persian garden architecture to India. Shah Jahan built Shahjahanabad, today’s Old Delhi, crowned by the majestic Red Fort and Jama Masjid. Later, the British created New Delhi with grand avenues and monuments like Rashtrapati Bhavan and India Gate. Today, Delhi is a living museum where ancient civilizations, Mughal glory, colonial legacy, and modern democracy exist together."
         },
         places: [
             { name: "India Gate", img: "images/delhi-1.jpg" },
@@ -41,7 +42,6 @@ const travelData = {
         ],
         story: {
             heading: "Where Earth Meets Sky",
-            // FIXED: Used backticks (`) below to allow multi-line text
             content: `Rann Utsav Tent City, located near Dholavira in Gujarat, is set within one of the most ecologically and culturally rich landscapes in the world. This remarkable region offers an extraordinary blend of pristine natural beauty, deep-rooted cultural heritage, and vibrant traditional celebrations. Held annually, the Rann Utsav Festival beautifully captures this spirit, presenting a colourful showcase of music, dance, art, and festive experiences that highlight the grandeur of this unique destination. Under the moonlit sky, the White Desert transforms into a surreal wonderland, creating an unforgettable spectacle of nature’s magic.
 
 The White Rann is renowned for its lively cultural expressions, including folk dances, traditional music, and exquisite handicrafts. Visitors can discover fine textiles, intricate embroidery, bandhani sarees, traditional jewellery, and detailed mirror work that reflect Gujarat’s rich artistic legacy. Guests are warmly welcomed by local communities, whose traditions and way of life remain closely connected to the region’s natural surroundings.
@@ -49,7 +49,7 @@ The White Rann is renowned for its lively cultural expressions, including folk d
 Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his iconic campaign, “Kutch Nahin Dekha Toh Kuch Nahi Dekha”, meaning “If you haven’t seen it, you haven’t truly seen anything.” This powerful message perfectly conveys the unmatched charm of the Rann Utsav Festival and the timeless beauty of this extraordinary destination.`
         },
         places: [
-             { name: "White Desert", img: "images/kutch-1.jpg" },
+            { name: "White Desert", img: "images/kutch-1.jpg" },
             { name: "Kalo Dungar", img: "images/kutch-2.jpg" },
             { name: "Bhujodi", img: "images/kutch-3.jpg" },
             { name: "Aina Mahal", img: "images/kutch-4.jpg" },
@@ -71,7 +71,7 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
         ],
         story: {
             heading: "Himalayan Paradise",
-            content: "Located at an elevation of 2,800 meters, Auli offers panoramic views of some of India's highest peaks, including Nanda Devi. It is a premier destination for winter sports and offers pristine oak forests."
+            content: "Auli was once a quiet Himalayan pastureland used by shepherds. Its strategic slopes were later developed by the Indian government to train soldiers for mountain warfare. Over time, Auli emerged as India’s premier skiing destination. Surrounded by oak forests and overlooking peaks like Nanda Devi, it offers both adventure and serenity, preserving the untouched charm of the Himalayas."
         },
         places: [
             { name: "Auli Artificial Lake", img: "images/auli-1.jpg" },
@@ -97,7 +97,7 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
         ],
         story: {
             heading: "Royal Grandeur",
-            content: "Founded in 1727 by Jai Singh II, Jaipur is India's first planned city. Famous for its pink-hued buildings, massive forts, and vibrant bazaars, it forms the Golden Triangle with Delhi and Agra."
+            content: "Founded in 1727 by Maharaja Sawai Jai Singh II, Jaipur was India’s first planned city based on Vastu Shastra. It became known as the Pink City when its buildings were painted pink in 1876 to welcome Prince Albert. Jaipur reflects Rajput pride and power through grand forts, royal palaces, and vibrant markets that still preserve traditional craftsmanship."
         },
         places: [
             { name: "Hawa Mahal", img: "images/jaipur-1.jpg" },
@@ -109,9 +109,11 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Jal Mahal", img: "images/jaipur-7.jpg" },
             { name: "Bapu Bazaar", img: "images/jaipur-8.jpg" }
         ]
-    },
+    }
 
-    // ROW 2
+    // Continue?  
+// js/data.js  (PART 2 CONTINUATION)
+
     "lakshadweep": {
         name: "Lakshadweep",
         tagline: "India's Coral Paradise",
@@ -123,7 +125,7 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
         ],
         story: {
             heading: "Tropical Bliss",
-            content: "A cluster of 36 islands known for their sun-kissed beaches and lush green landscapes. It offers some of the best diving spots in India with untouched coral reefs and crystal clear lagoons."
+            content: "Lakshadweep, meaning 'a hundred thousand islands', has been known to sailors and traders since ancient times. Arab traders were among the earliest settlers, and their influence is still visible in the culture, language, and traditions of the islands. These coral islands were once important stopovers in the maritime trade routes connecting India with the Middle East and Africa. Isolated from the mainland, Lakshadweep evolved into a pristine ecosystem where nature remains largely untouched. Today, it is celebrated for its turquoise lagoons, coral reefs, and marine biodiversity, offering a rare glimpse into a tropical paradise preserved by time."
         },
         places: [
             { name: "Agatti Island", img: "images/lak-1.jpg" },
@@ -148,7 +150,7 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
         ],
         story: {
             heading: "The Lost Empire",
-            content: "Once the capital of the Vijayanagara Empire, Hampi is now a UNESCO World Heritage site. Its boulder-strewn landscape is dotted with magnificent temples, markets, and monuments that tell tales of a glorious past."
+            content: "Hampi was the glorious capital of the Vijayanagara Empire in the 14th to 16th centuries, one of the richest and most powerful empires in Indian history. Foreign travelers like Domingo Paes described it as grander than Rome, filled with bustling markets, temples, and palaces. It was a center of art, architecture, and international trade. In 1565, after the Battle of Talikota, the city was invaded and destroyed, leading to its abandonment. Today, its ruins stand as silent witnesses to a once-thriving civilization and remain one of the finest examples of medieval Indian architecture."
         },
         places: [
             { name: "Virupaksha Temple", img: "images/hampi-1.jpg" },
@@ -173,7 +175,7 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
         ],
         story: {
             heading: "Oldest Living City",
-            content: "Varanasi, or Kashi, is older than history, tradition, and legend. It is the holiest of the seven sacred cities in Hinduism and Jainism, famous for its Ghats lining the River Ganges."
+            content: "Varanasi, also known as Kashi or Banaras, is believed to be one of the oldest continuously inhabited cities in the world, dating back more than 5,000 years. It has been a spiritual, cultural, and educational center since ancient times. Saints, scholars, and seekers have come here in search of enlightenment. The ghats along the River Ganga are sacred spaces where life and death meet, symbolizing liberation and rebirth. Even today, rituals performed here connect modern India directly with its ancient civilization."
         },
         places: [
             { name: "Kashi Vishwanath", img: "images/varanasi-1.jpg" },
@@ -198,7 +200,7 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
         ],
         story: {
             heading: "Emerald Hills",
-            content: "Situated at the confluence of three mountain streams, Munnar was once the summer resort of the British government in South India. It is famous for its rolling tea plantations and mist-covered hills."
+            content: "Munnar was developed in the late 19th century by the British as a summer retreat and a major tea plantation region. John Daniel Munro of the British government established the tea estates that transformed the hills into endless green carpets. The name 'Munnar' means 'three rivers', referring to the confluence of the Mudhirapuzha, Nallathanni, and Kundala rivers. Today, Munnar stands as a legacy of colonial plantation culture blended with Kerala’s natural beauty and biodiversity."
         },
         places: [
             { name: "Tea Museum", img: "images/munnar-1.jpg" },
@@ -211,8 +213,8 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Top Station", img: "images/munnar-8.jpg" }
         ]
     },
+// js/data.js  (PART 3 CONTINUATION)
 
-    // ROW 3 (TRENDING)
     "ayodhya": {
         name: "Ayodhya",
         tagline: "City of Lord Rama",
@@ -224,7 +226,7 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
         ],
         story: {
             heading: "A New Era",
-            content: "Ayodhya is an ancient city of India, the birthplace of Lord Rama and setting of the epic Ramayana. With the new Ram Mandir, it has become a global spiritual destination."
+            content: "Ayodhya is one of the most ancient and sacred cities of India, deeply rooted in Hindu mythology and history. It is believed to be the birthplace of Lord Rama, the hero of the Ramayana, and has been a center of devotion for thousands of years. Ancient scriptures describe Ayodhya as a prosperous and divine city ruled by the Ikshvaku dynasty. Over centuries, it remained a symbol of faith, spirituality, and cultural continuity. With the construction of the Ram Mandir, Ayodhya has entered a new era of spiritual revival, attracting pilgrims from across the globe while preserving its timeless legacy."
         },
         places: [
             { name: "Ram Mandir", img: "images/ayo-1.jpg" },
@@ -249,7 +251,7 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
         ],
         story: {
             heading: "Hidden Gem",
-            content: "Tawang is known for its beautiful monastery, which is the largest in India. Located in Arunachal Pradesh, it offers breathtaking views of the eastern Himalayas and deep valleys."
+            content: "Tawang holds immense importance in Tibetan Buddhism. The Tawang Monastery, founded in the 17th century, is the largest monastery in India and second largest in the world. It played a key role in the spread of Buddhism in the eastern Himalayas and served as a center of spiritual learning. Due to its remote location, Tawang remained isolated for centuries, preserving its traditions, culture, and serene beauty. Today, it stands as a peaceful sanctuary where spirituality meets breathtaking Himalayan landscapes."
         },
         places: [
             { name: "Tawang Monastery", img: "images/tawang-1.jpg" },
@@ -274,7 +276,7 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
         ],
         story: {
             heading: "Beaches & Temples",
-            content: "Gokarna is a small temple town on the western coast of India. It is known for its sacred Mahabaleshwar Temple as well as its pristine, laid-back beaches that offer a quieter alternative to Goa."
+            content: "Gokarna is an ancient pilgrimage town mentioned in Hindu scriptures and associated with Lord Shiva. The Mahabaleshwar Temple houses the sacred Atmalinga and has drawn devotees for centuries. Traditionally a quiet religious town, Gokarna later attracted travelers and backpackers seeking peaceful beaches away from crowded tourist hubs. Today, it uniquely blends spirituality and serenity, where sacred temples coexist with untouched coastal beauty."
         },
         places: [
             { name: "Om Beach", img: "images/gok-1.jpg" },
@@ -299,7 +301,7 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
         ],
         story: {
             heading: "Fort Alive",
-            content: "Jaisalmer stands on a ridge of yellowish sandstone, crowned by the ancient Jaisalmer Fort. This fort contains a royal palace and several ornate Jain temples. It is a gateway to the Thar Desert."
+            content: "Founded in 1156 AD by Rawal Jaisal, Jaisalmer rose as a major trading center on the camel caravan routes connecting India with Central Asia, Persia, and Arabia. Merchants accumulated immense wealth, reflected in the beautifully carved havelis and temples. Jaisalmer Fort, built of golden sandstone, is one of the few living forts in the world where people still reside. The city glows like gold under the desert sun, symbolizing the pride, resilience, and architectural brilliance of the Rajput desert kingdoms."
         },
         places: [
             { name: "Jaisalmer Fort", img: "images/jai-1.jpg" },
@@ -313,3 +315,5 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
         ]
     }
 };
+
+// END OF travelData
