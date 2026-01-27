@@ -1,902 +1,238 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<meta name="author" content="Untree.co">
-	<link rel="shortcut icon" href="favicon.png">
+<meta charset="UTF-8">
+<title>About Us | Oak</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name="description" content="" />
-	<meta name="keywords" content="bootstrap, bootstrap5" />
-	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="fonts/icomoon/style.css">
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#f5f7fa;color:#333;line-height:1.6}
 
-	<link rel="stylesheet" href="css/tiny-slider.css">
-	<link rel="stylesheet" href="css/aos.css">
-	<link rel="stylesheet" href="css/flatpickr.min.css">
-	<link rel="stylesheet" href="css/glightbox.min.css">
-	<link rel="stylesheet" href="css/style.css">
+/* NAV */
+nav{background:#0b1d2a;padding:15px 0;}
+nav .container{width:90%;margin:auto;display:flex;justify-content:space-between;align-items:center;}
+nav h2{color:white;}
+nav a{color:white;text-decoration:none;margin:0 12px;}
+nav a:hover{color:#3f8cff}
 
+/* HERO */
+.hero{
+  height:80vh;
+  background:url("images/some4.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+.hero-content{
+  position:relative;
+  color:white;
+  width:90%;
+  margin:auto;
+  max-width:600px;
+}
+.hero h1{font-size:3.5rem;margin-bottom:15px}
 
-	<title>About us</title>
+/* SECTION */
+.section{padding:80px 0;}
+.container{width:90%;margin:auto}
+
+/* CARDS */
+.card{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* SERVICES */
+.services,.values,.team{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+.box{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+.box:hover{transform:translateY(-6px)}
+
+/* TEAM */
+.person{text-align:center}
+.person img{
+  width:140px;height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:15px;
+}
+.person span{font-size:13px;color:#777}
+
+/* FOOTER (YOUR ORIGINAL STYLE) */
+.site-footer{
+  background:#0b1d2a;
+  color:#ddd;
+  padding:60px 0;
+}
+.site-footer h3{color:white}
+.site-footer a{color:#aaa;text-decoration:none}
+.site-footer a:hover{color:white}
+.site-footer .social li{display:inline-block;margin-right:10px}
+.site-footer .social span{font-size:18px}
+.site-footer .container{width:90%;margin:auto}
+</style>
 </head>
+
 <body>
 
-	<div class="site-mobile-menu site-navbar-target">
-		<div class="site-mobile-menu-header">
-			<div class="site-mobile-menu-close">
-				<span class="icofont-close js-menu-toggle"></span>
-			</div>
-		</div>
-		<div class="site-mobile-menu-body"></div>
-	</div>
-
-	<nav class="site-nav mt-3">
-		<div class="container">
-
-			<div class="site-navigation">
-				<div class="row">
-					<div class="col-6 col-lg-3">
-						<a href="index.html" class="logo m-0 float-start">Oak</a>
-					</div>
-					<div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
-						<ul class="js-clone-nav  text-center site-menu p-0 m-0">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="destinations.html">Destinations</a></li>
-							<li><a href="blog.html">Blogs</a></li>
-							<li class="active"><a href="about.html">About us</a></li>
-						 
-
-						</ul>
-					</div>
-					<div class="col-6 col-lg-3 text-lg-end">
-						<ul class="js-clone-nav d-none d-lg-inline-block text-end site-menu ">
-							<li class="cta-button"><a href="contact.html">Contact Us</a></li>
-						</ul>
-
-						<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
-							<span></span>
-						</a>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
-
-	
-
-	<div class="hero overlay">
-
-<!doctype html>
-<html lang="en">
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<meta name="author" content="Untree.co">
-	<link rel="shortcut icon" href="favicon.png">
-
-	<meta name="description" content="" />
-	<meta name="keywords" content="bootstrap, bootstrap5" />
-	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
-	<link rel="stylesheet" href="fonts/icomoon/style.css">
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-
-	<link rel="stylesheet" href="css/tiny-slider.css">
-	<link rel="stylesheet" href="css/aos.css">
-	<link rel="stylesheet" href="css/flatpickr.min.css">
-	<link rel="stylesheet" href="css/glightbox.min.css">
-	<link rel="stylesheet" href="css/style.css">
-
-
-	<title>About us</title>
-</head>
-<body>
-
-	<div class="site-mobile-menu site-navbar-target">
-		<div class="site-mobile-menu-header">
-			<div class="site-mobile-menu-close">
-				<span class="icofont-close js-menu-toggle"></span>
-			</div>
-		</div>
-		<div class="site-mobile-menu-body"></div>
-	</div>
-
-	<nav class="site-nav mt-3">
-		<div class="container">
-
-			<div class="site-navigation">
-				<div class="row">
-					<div class="col-6 col-lg-3">
-						<a href="index.html" class="logo m-0 float-start">Oak</a>
-					</div>
-					<div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
-						<ul class="js-clone-nav  text-center site-menu p-0 m-0">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="destinations.html">Destinations</a></li>
-							<li><a href="blog.html">Blogs</a></li>
-							<li class="active"><a href="about.html">About us</a></li>
-						 
-
-						</ul>
-					</div>
-					<div class="col-6 col-lg-3 text-lg-end">
-						<ul class="js-clone-nav d-none d-lg-inline-block text-end site-menu ">
-							<li class="cta-button"><a href="contact.html">Contact Us</a></li>
-						</ul>
-
-						<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
-							<span></span>
-						</a>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
-
-	
-
-	<div class="hero overlay">
-
-		<div class="img-bg rellax">
-			<img src="images/some4.jpg" alt="Image" class="img-fluid">
-		</div>
-
-		<div class="container">
-			<div class="row align-items-center justify-content-start">
-				<div class="col-lg-5">
-
-					<h1 class="heading" data-aos="fade-up">About Us</h1>
-					<p class="mb-5" data-aos="fade-up"> "The world is a canvas, harshvardhan, paint it with your experiences and memories."
-					</p>
-
-					<div data-aos="fade-up">
-						<a href="images/ranbir.webm" class="play-button align-items-center d-flex glightbox3" >
-							<span class="icon-button me-3">
-								<span class="icon-play"></span>
-							</span>
-							<span class="caption">Watch video</span>
-						</a>
-					</div>
-				</div>
-
-				
-			</div>
-		</div>
-
-		
-	</div>
-
-
-	<div class="section section-2">
-		<div class="container">
-			<div class="row align-items-center justify-content-between">
-				<div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
-					<div class="image-stack mb-5 mb-lg-0">
-						<div class="image-stack__item image-stack__item--bottom" data-aos="fade-up"  >
-							<img src="images/img_v_1.jpg" alt="Image" class="img-fluid rellax ">
-						</div>
-						<div class="image-stack__item image-stack__item--top" data-aos="fade-up" data-aos-delay="100"  data-rellax-percentage="0.5">
-							<img src="images/img_v_2.jpg" alt="Image" class="img-fluid">
-						</div>
-					</div>
-
-				</div>
-				<div class="col-lg-4 order-lg-1">
-
-					<div>
-						<h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">Explore All Corners of The World With Us</h2>
-
-						<p data-aos="fade-up" data-aos-delay="200"> Harshvardhan, Srumitha, and Jyoti, three kindred spirits bound by their insatiable wanderlust, shared a dream to explore the world's uncharted territories together. </p>
-
-						<p data-aos="fade-up" data-aos-delay="300"> Join us on exciting adventures to every corner of the globe! Experience stunning landscapes, vibrant cultures, and unforgettable memories. Pack your bags and let’s discover the world together!
-
-						</p>
-
-						<p class="my-4" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">Read more</a></p>
-					</div>
-				</div>
-				
-			</div>
-
-		</div>		
-	</div>
-
-	
-	<div class="section service-section-1">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-lg-3 mb-4 mb-lg-0">
-					<div class="heading-content" data-aos="fade-up">
-						<h2>Our<span class="d-block">Dream</span></h2>
-						<p>Our dream is to inspire and empower travelers like you to explore the world's most breathtaking destinations.</p>
-						<p class="my-4" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">View All</a></p>
-					</div>
-				</div>
-				<div class="col-lg-9">
-					<div class="row">
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="100">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/01.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Enthusiam</h3>
-									<p>We're passionate about sparking your enthusiasm for travel. Our team of experts curates content that showcases the unique charm and attractions of each destination. </p>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="200">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/02.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Spirited Away</h3>
-									<p>We want to transport you to a world of immersive experiences. Imagine strolling through ancient ruins, sampling local cuisine.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="300">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/03.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Wanderer</h3>
-									<p>  
-										Sometimes, the best memories are created when we wander off the beaten path. Our website will feature hidden gems.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="400">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/04.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Connection</h3>
-									<p>Travel is about connection with people, places, and experiences. Our website aims to foster a community of like-minded travelers </p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<div class="section">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-lg-6 mx-auto text-center">
-					<div class="heading-content" data-aos="fade-up">
-						<h2 class="heading">Meet Our Team of Experts</h2>
-						<p>something about team sprit</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-3">
-					<a href="#" class="person">
-						<img src=" c:\Users\jyoti\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\IMG-20241019-WA0029.jpg" alt="Image" class="img-fluid mb-4">
-						<span class="subheading d-inline-block">Designer,co-Founder</span>
-						<h3 class="mb-3">Harshvardhan tailor </h3>
-						<p class="text-muted">write about urself.</p>
-					</a>
-				</div>
-				<div class="col-lg-3">
-					<a href="#" class="person">
-						<img src=" c:\Users\jyoti\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\IMG-20241019-WA0028.jpg" alt="Image" class="img-fluid mb-4">
-						<span class="subheading d-inline-block">Developer, Founder</span>
-						<h3 class="mb-3">Srumith Singh</h3>
-						<p class="text-muted"> write about urself.</p>
-					</a>
-				</div>
-				<div class="col-lg-3">
-					<a href="#" class="person">
-						<img src=" c:\Users\jyoti\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\IMG-20241019-WA0027.jpg" alt="Image" class="img-fluid mb-4">
-						<span class="subheading d-inline-block">Coder,founder</span>
-						<h3 class="mb-3">Jyotiranjan Mohanty</h3>
-						<p class="text-muted">write about urself.</p>
-					</a>
-				</div>
-				 
-			</div>
-		</div>
-	</div>
-
-	<div class="section service-section-1">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-lg-6 mx-auto text-center">
-					<div class="heading-content" data-aos="fade-up">
-						<h2 class="heading">Open Positions</h2>
-						<p> Looking for some passoinate employees for this project.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="bg-white p-4 rounded job-position">
-						<div class="row">
-							<div class="col-lg-7">
-								<span class="block subtitle">Design</span>
-								<h2>Product Designer</h2>
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center me-4">
-										<span class="icon-room me-2"></span> <span>Remote</span>
-									</div>
-									<div class="d-flex align-items-center">
-										<span class="icon-clock-o me-2"></span> <span>Fulltime</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 text-lg-end">
-								<a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
-							</div>
-
-						</div> 	
-
-					</div>
-				</div>
-
-				<div class="col-lg-12">
-					<div class="bg-white p-4 rounded job-position">
-						<div class="row">
-							<div class="col-lg-7">
-								<span class="block subtitle">Design</span>
-								<h2>Account Executive</h2>
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center me-4">
-										<span class="icon-room me-2"></span> <span>Remote</span>
-									</div>
-									<div class="d-flex align-items-center">
-										<span class="icon-clock-o me-2"></span> <span>Fulltime</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 text-lg-end">
-								<a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
-							</div>
-
-						</div> 	
-
-					</div>
-				</div>
-
-				<div class="col-lg-12">
-					<div class="bg-white p-4 rounded job-position">
-						<div class="row">
-							<div class="col-lg-7">
-								<span class="block subtitle">Design</span>
-								<h2>Customer Success Manager</h2>
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center me-4">
-										<span class="icon-room me-2"></span> <span>Remote</span>
-									</div>
-									<div class="d-flex align-items-center">
-										<span class="icon-clock-o me-2"></span> <span>Fulltime</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 text-lg-end">
-								<a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
-							</div>
-
-						</div> 	
-
-					</div>
-				</div>
-
-				<div class="col-lg-12">
-					<div class="bg-white p-4 rounded job-position">
-						<div class="row">
-							<div class="col-lg-7">
-								<span class="block subtitle">Design</span>
-								<h2>Engineering Manager</h2>
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center me-4">
-										<span class="icon-room me-2"></span> <span>Remote</span>
-									</div>
-									<div class="d-flex align-items-center">
-										<span class="icon-clock-o me-2"></span> <span>Fulltime</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 text-lg-end">
-								<a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
-							</div>
-
-						</div> 	
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="site-footer">
-		<div class="container">
-
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="widget">
-						<h3>About Passport<span class="text-primary">.</span> </h3>
-						<p> Your journey is our priority. Let's make your travel experience extraordinary!</p>
-					</div> <!-- /.widget -->
-					<div class="widget">
-						<h3>Connect</h3>
-						<ul class="list-unstyled social">
-							<li><a href="#"><span class="icon-instagram"></span></a></li>
-							<li><a href="#"><span class="icon-twitter"></span></a></li>
-							<li><a href="#"><span class="icon-facebook"></span></a></li>
-							<li><a href="#"><span class="icon-linkedin"></span></a></li>
-							<li><a href="#"><span class="icon-pinterest"></span></a></li>
-							<li><a href="#"><span class="icon-dribbble"></span></a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-3 -->
-
-				<div class="col-lg-2 ml-auto">
-					<div class="widget">
-						<h3>Links</h3>
-						<ul class="list-unstyled float-left links">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">News</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-3 -->
-
-				<div class="col-lg-2">
-					<div class="widget">
-						<h3>Company</h3>
-						<ul class="list-unstyled float-left links">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">News</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-3 -->
-
-
-				<div class="col-lg-3">
-					<div class="widget">
-						<h3>Contact</h3>
-						<address>Parul University, Vaghodia Subdistrict, Vadodara-391760</address>
-						<ul class="list-unstyled links mb-4">
-							<li><a href="tel://11234567890">+91 8144850416</a></li>
-							<li><a href="tel://11234567890">+91 6303840702</a></li>
-							<li><a href="mailto:info@mydomain.com">tsrumith@gmail.com</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-3 -->
-
-			</div> <!-- /.row -->
-
-			<div class="row mt-5">
-				<div class="col-12 text-center">
-					<p class="mb-0">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">The strangers.co</a> <!-- License information: https://untree.co/license/ --> Distributed By <a href="https:/themewagon.com" target="_blank">Jyoti</a>
-					</p>
-				</div>
-			</div> <!-- /.container -->
-		</div> <!-- /.site-footer -->
-
-		<!-- Preloader -->
-		<div id="overlayer"></div>
-		<div class="loader">
-			<div class="spinner-border text-primary" role="status">
-				<span class="visually-hidden">Loading...</span>
-			</div>
-		</div>
-
-
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/tiny-slider.js"></script>
-		<script src="js/aos.js"></script>
-		<script src="js/navbar.js"></script>
-		<script src="js/counter.js"></script>
-		<script src="js/rellax.js"></script>
-		<script src="js/flatpickr.js"></script>
-		<script src="js/glightbox.min.js"></script>
-		<script src="js/custom.js"></script>
-	</body>
-	</html>		<div class="img-bg rellax">
-			<img src="images/some4.jpg" alt="Image" class="img-fluid">
-		</div>
-
-		<div class="container">
-			<div class="row align-items-center justify-content-start">
-				<div class="col-lg-5">
-
-					<h1 class="heading" data-aos="fade-up">About Us</h1>
-					<p class="mb-5" data-aos="fade-up"> "The world is a canvas, harshvardhan, paint it with your experiences and memories."
-					</p>
-
-					<div data-aos="fade-up">
-						<a href="images/ranbir.webm" class="play-button align-items-center d-flex glightbox3" >
-							<span class="icon-button me-3">
-								<span class="icon-play"></span>
-							</span>
-							<span class="caption">Watch video</span>
-						</a>
-					</div>
-				</div>
-
-				
-			</div>
-		</div>
-
-		
-	</div>
-
-
-	<div class="section section-2">
-		<div class="container">
-			<div class="row align-items-center justify-content-between">
-				<div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
-					<div class="image-stack mb-5 mb-lg-0">
-						<div class="image-stack__item image-stack__item--bottom" data-aos="fade-up"  >
-							<img src="images/img_v_1.jpg" alt="Image" class="img-fluid rellax ">
-						</div>
-						<div class="image-stack__item image-stack__item--top" data-aos="fade-up" data-aos-delay="100"  data-rellax-percentage="0.5">
-							<img src="images/img_v_2.jpg" alt="Image" class="img-fluid">
-						</div>
-					</div>
-
-				</div>
-				<div class="col-lg-4 order-lg-1">
-
-					<div>
-						<h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">Explore All Corners of The World With Us</h2>
-
-						<p data-aos="fade-up" data-aos-delay="200"> Harshvardhan, Srumitha, and Jyoti, three kindred spirits bound by their insatiable wanderlust, shared a dream to explore the world's uncharted territories together. </p>
-
-						<p data-aos="fade-up" data-aos-delay="300"> Join us on exciting adventures to every corner of the globe! Experience stunning landscapes, vibrant cultures, and unforgettable memories. Pack your bags and let’s discover the world together!
-
-						</p>
-
-						<p class="my-4" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">Read more</a></p>
-					</div>
-				</div>
-				
-			</div>
-
-		</div>		
-	</div>
-
-	
-	<div class="section service-section-1">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-lg-3 mb-4 mb-lg-0">
-					<div class="heading-content" data-aos="fade-up">
-						<h2>Our<span class="d-block">Dream</span></h2>
-						<p>Our dream is to inspire and empower travelers like you to explore the world's most breathtaking destinations.</p>
-						<p class="my-4" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">View All</a></p>
-					</div>
-				</div>
-				<div class="col-lg-9">
-					<div class="row">
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="100">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/01.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Enthusiam</h3>
-									<p>We're passionate about sparking your enthusiasm for travel. Our team of experts curates content that showcases the unique charm and attractions of each destination. </p>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="200">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/02.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Spirited Away</h3>
-									<p>We want to transport you to a world of immersive experiences. Imagine strolling through ancient ruins, sampling local cuisine.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="300">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/03.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Wanderer</h3>
-									<p>  
-										Sometimes, the best memories are created when we wander off the beaten path. Our website will feature hidden gems.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="400">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/04.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Connection</h3>
-									<p>Travel is about connection with people, places, and experiences. Our website aims to foster a community of like-minded travelers </p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<div class="section">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-lg-6 mx-auto text-center">
-					<div class="heading-content" data-aos="fade-up">
-						<h2 class="heading">Meet Our Team of Experts</h2>
-						<p>something about team sprit</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-3">
-					<a href="#" class="person">
-						<img src=" c:\Users\jyoti\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\IMG-20241019-WA0029.jpg" alt="Image" class="img-fluid mb-4">
-						<span class="subheading d-inline-block">Designer,co-Founder</span>
-						<h3 class="mb-3">Harshvardhan tailor </h3>
-						<p class="text-muted">write about urself.</p>
-					</a>
-				</div>
-				<div class="col-lg-3">
-					<a href="#" class="person">
-						<img src=" c:\Users\jyoti\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\IMG-20241019-WA0028.jpg" alt="Image" class="img-fluid mb-4">
-						<span class="subheading d-inline-block">Developer, Founder</span>
-						<h3 class="mb-3">Srumith Singh</h3>
-						<p class="text-muted"> write about urself.</p>
-					</a>
-				</div>
-				<div class="col-lg-3">
-					<a href="#" class="person">
-						<img src=" c:\Users\jyoti\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\IMG-20241019-WA0027.jpg" alt="Image" class="img-fluid mb-4">
-						<span class="subheading d-inline-block">Coder,founder</span>
-						<h3 class="mb-3">Jyotiranjan Mohanty</h3>
-						<p class="text-muted">write about urself.</p>
-					</a>
-				</div>
-				 
-			</div>
-		</div>
-	</div>
-
-	<div class="section service-section-1">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-lg-6 mx-auto text-center">
-					<div class="heading-content" data-aos="fade-up">
-						<h2 class="heading">Open Positions</h2>
-						<p> Looking for some passoinate employees for this project.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="bg-white p-4 rounded job-position">
-						<div class="row">
-							<div class="col-lg-7">
-								<span class="block subtitle">Design</span>
-								<h2>Product Designer</h2>
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center me-4">
-										<span class="icon-room me-2"></span> <span>Remote</span>
-									</div>
-									<div class="d-flex align-items-center">
-										<span class="icon-clock-o me-2"></span> <span>Fulltime</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 text-lg-end">
-								<a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
-							</div>
-
-						</div> 	
-
-					</div>
-				</div>
-
-				<div class="col-lg-12">
-					<div class="bg-white p-4 rounded job-position">
-						<div class="row">
-							<div class="col-lg-7">
-								<span class="block subtitle">Design</span>
-								<h2>Account Executive</h2>
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center me-4">
-										<span class="icon-room me-2"></span> <span>Remote</span>
-									</div>
-									<div class="d-flex align-items-center">
-										<span class="icon-clock-o me-2"></span> <span>Fulltime</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 text-lg-end">
-								<a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
-							</div>
-
-						</div> 	
-
-					</div>
-				</div>
-
-				<div class="col-lg-12">
-					<div class="bg-white p-4 rounded job-position">
-						<div class="row">
-							<div class="col-lg-7">
-								<span class="block subtitle">Design</span>
-								<h2>Customer Success Manager</h2>
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center me-4">
-										<span class="icon-room me-2"></span> <span>Remote</span>
-									</div>
-									<div class="d-flex align-items-center">
-										<span class="icon-clock-o me-2"></span> <span>Fulltime</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 text-lg-end">
-								<a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
-							</div>
-
-						</div> 	
-
-					</div>
-				</div>
-
-				<div class="col-lg-12">
-					<div class="bg-white p-4 rounded job-position">
-						<div class="row">
-							<div class="col-lg-7">
-								<span class="block subtitle">Design</span>
-								<h2>Engineering Manager</h2>
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center me-4">
-										<span class="icon-room me-2"></span> <span>Remote</span>
-									</div>
-									<div class="d-flex align-items-center">
-										<span class="icon-clock-o me-2"></span> <span>Fulltime</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 text-lg-end">
-								<a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
-							</div>
-
-						</div> 	
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="site-footer">
-		<div class="container">
-
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="widget">
-						<h3>About Passport<span class="text-primary">.</span> </h3>
-						<p> Your journey is our priority. Let's make your travel experience extraordinary!</p>
-					</div> <!-- /.widget -->
-					<div class="widget">
-						<h3>Connect</h3>
-						<ul class="list-unstyled social">
-							<li><a href="#"><span class="icon-instagram"></span></a></li>
-							<li><a href="#"><span class="icon-twitter"></span></a></li>
-							<li><a href="#"><span class="icon-facebook"></span></a></li>
-							<li><a href="#"><span class="icon-linkedin"></span></a></li>
-							<li><a href="#"><span class="icon-pinterest"></span></a></li>
-							<li><a href="#"><span class="icon-dribbble"></span></a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-3 -->
-
-				<div class="col-lg-2 ml-auto">
-					<div class="widget">
-						<h3>Links</h3>
-						<ul class="list-unstyled float-left links">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">News</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-3 -->
-
-				<div class="col-lg-2">
-					<div class="widget">
-						<h3>Company</h3>
-						<ul class="list-unstyled float-left links">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">News</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-3 -->
-
-
-				<div class="col-lg-3">
-					<div class="widget">
-						<h3>Contact</h3>
-						<address>Parul University, Vaghodia Subdistrict, Vadodara-391760</address>
-						<ul class="list-unstyled links mb-4">
-							<li><a href="tel://11234567890">+91 8144850416</a></li>
-							<li><a href="tel://11234567890">+91 6303840702</a></li>
-							<li><a href="mailto:info@mydomain.com">tsrumith@gmail.com</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-3 -->
-
-			</div> <!-- /.row -->
-
-			<div class="row mt-5">
-				<div class="col-12 text-center">
-					<p class="mb-0">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">The strangers.co</a> <!-- License information: https://untree.co/license/ --> Distributed By <a href="https:/themewagon.com" target="_blank">Jyoti</a>
-					</p>
-				</div>
-			</div> <!-- /.container -->
-		</div> <!-- /.site-footer -->
-
-		<!-- Preloader -->
-		<div id="overlayer"></div>
-		<div class="loader">
-			<div class="spinner-border text-primary" role="status">
-				<span class="visually-hidden">Loading...</span>
-			</div>
-		</div>
-
-
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/tiny-slider.js"></script>
-		<script src="js/aos.js"></script>
-		<script src="js/navbar.js"></script>
-		<script src="js/counter.js"></script>
-		<script src="js/rellax.js"></script>
-		<script src="js/flatpickr.js"></script>
-		<script src="js/glightbox.min.js"></script>
-		<script src="js/custom.js"></script>
-	</body>
-	</html>
-
- 
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <h2>Oak</h2>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="blog.html">Blogs</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>About Us</h1>
+    <p>"The world is a canvas, paint it with your experiences and memories."</p>
+  </div>
+</div>
+
+<!-- WHO WE ARE -->
+<div class="section">
+  <div class="container">
+    <div class="card" style="text-align:center">
+      <h2>Who We Are</h2>
+      <p>
+        We are Harshvardhan, Srumith and Jyoti – three explorers united by curiosity and creativity.
+        Oak was created to inspire people to travel deeper, feel stronger, and live richer.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- OUR MISSION & VISION -->
+<div class="section">
+  <div class="container">
+    <div class="values">
+      <div class="box">
+        <h3>Our Mission</h3>
+        <p>To inspire travelers to explore the world authentically and fearlessly.</p>
+      </div>
+      <div class="box">
+        <h3>Our Vision</h3>
+        <p>To become a trusted global travel companion for dreamers.</p>
+      </div>
+      <div class="box">
+        <h3>Our Promise</h3>
+        <p>Honest guides, unforgettable experiences, meaningful journeys.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="section">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:40px;">Our Dream</h2>
+    <div class="services">
+      <div class="box"><h3>Enthusiasm</h3><p>Igniting passion for exploration.</p></div>
+      <div class="box"><h3>Spirited Away</h3><p>Immersive storytelling and travel.</p></div>
+      <div class="box"><h3>Wanderer</h3><p>Hidden gems and new horizons.</p></div>
+      <div class="box"><h3>Connection</h3><p>Bringing cultures and people closer.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<div class="section">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:40px;">Meet Our Team</h2>
+    <div class="team">
+      <div class="box person">
+        <img src="images/team/harshvardhan.jpg">
+        <span>Designer, Co-Founder</span>
+        <h3>Harshvardhan Tailor</h3>
+        <p>Creative mind behind visual identity.</p>
+      </div>
+      <div class="box person">
+        <img src="images/team/srumith.jpg">
+        <span>Developer, Founder</span>
+        <h3>Srumith Singh</h3>
+        <p>Technical backbone of Oak.</p>
+      </div>
+      <div class="box person">
+        <img src="images/team/jyoti.jpg">
+        <span>Coder, Founder</span>
+        <h3>Jyotiranjan Mohanty</h3>
+        <p>Performance and system architect.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ORIGINAL FOOTER ADDED -->
+<div class="site-footer">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px">
+
+      <div>
+        <h3>About Passport.</h3>
+        <p>Your journey is our priority. Let’s make travel extraordinary.</p>
+      </div>
+
+      <div>
+        <h3>Links</h3>
+        <ul style="list-style:none">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Company</h3>
+        <ul style="list-style:none">
+          <li><a href="#">News</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p>Parul University, Vadodara</p>
+        <p>📞 +91 8144850416</p>
+        <p>📧 tsrumith@gmail.com</p>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;margin-top:40px">
+      © 2026 Oak. Designed with ❤️ by Jyoti
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
