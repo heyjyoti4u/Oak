@@ -242,69 +242,67 @@
         <script src="js/custom.js"></script>
 
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                // Check if data loaded
-                if (typeof travelData === 'undefined') {
-                    console.error("travelData is missing! Check if js/data.js is loaded correctly.");
-                    return;
-                }
+document.addEventListener("DOMContentLoaded", function () {
 
-                const keys = Object.keys(travelData);
-                
-                // Helper to create HTML for one card
-                function createCardHTML(key, delay) {
-                    const item = travelData[key];
-                    // Truncate story content to 100 chars
-                    const shortDesc = item.story.content.substring(0, 100) + "...";
-                    // Use the first event date, or a default
-                    const dateDisplay = (item.events && item.events.length > 0) ? item.events[0].date : "Jan 2026";
-                    
-                    return `
-                    <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="${delay}">
-                        <div class="media-entry">
-                            <a href="view.html?id=${key}">
-                                <img src="${item.heroImage}" alt="${item.name}" class="img-fluid">
-                            </a>
-                            <div class="bg-white m-body">
-                                <span class="date">${dateDisplay}</span>
-                                <h3><a href="view.html?id=${key}">${item.name}: ${item.tagline}</a></h3>
-                                <p>${shortDesc}</p>
-                                <a href="view.html?id=${key}" class="more d-flex align-items-center float-start">
-                                    <span class="label">Read More</span>
-                                    <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>`;
-                }
+    if (typeof travelData === "undefined") {
+        console.error("travelData not loaded. Check js/data.js path.");
+        return;
+    }
 
-                // Function to fill a specific container row with a slice of data
-                function fillRow(containerId, startIdx, endIdx) {
-                    const container = document.getElementById(containerId);
-                    if (!container) return;
+    const keys = Object.keys(travelData);
 
-                    let html = "";
-                    let delay = 100;
-                    // Slice the keys for this specific row
-                    const rowKeys = keys.slice(startIdx, endIdx);
+    function createCardHTML(key, delay) {
+        const item = travelData[key];
+        const shortDesc = item.story.content.substring(0, 110) + "...";
+        const dateDisplay = (item.events && item.events.length > 0)
+            ? item.events[0].date
+            : "Jan 2026";
 
-                    rowKeys.forEach(key => {
-                        html += createCardHTML(key, delay);
-                        delay += 100; // Stagger animation
-                    });
+        return `
+        <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="${delay}">
+            <div class="media-entry">
+                <a href="view.html?id=${key}">
+                    <img src="${item.heroImage}" alt="${item.name}" class="img-fluid">
+                </a>
+                <div class="bg-white m-body">
+                    <span class="date">${dateDisplay}</span>
+                    <h3><a href="view.html?id=${key}">${item.name}: ${item.tagline}</a></h3>
+                    <p>${shortDesc}</p>
+                    <a href="view.html?id=${key}" class="more d-flex align-items-center float-start">
+                        <span class="label">Read More</span>
+                        <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+                    </a>
+                </div>
+            </div>
+        </div>`;
+    }
 
-                    container.innerHTML = html;
-                }
+    function fillRow(containerId, startIdx, endIdx) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
 
-                // Fill Row 1 (First 4 items)
-                fillRow("blog-row-1", 0, 4);
+        let html = "";
+        let delay = 100;
 
-                // Fill Row 2 (Next 4 items)
-                fillRow("blog-row-2", 4, 8);
+        keys.slice(startIdx, endIdx).forEach(key => {
+            html += createCardHTML(key, delay);
+            delay += 100;
+        });
 
-                // Fill Row 3 (Last 4 items)
-                fillRow("blog-row-3", 8, 12);
-            });
-        </script>
+        container.innerHTML = html;
+    }
+
+    // Row 1
+    fillRow("blog-row-1", 0, 4);
+
+    // Row 2
+    fillRow("blog-row-2", 4, 8);
+
+    // Row 3 (Trending)
+    fillRow("blog-row-3", 8, 12);
+
+});
+</script>
+
     </body>
 </html>
