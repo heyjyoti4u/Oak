@@ -24,7 +24,34 @@
 	<link rel="stylesheet" href="css/style.css">
 
 
-	<title>Blogs - Passport</title>
+	<title>Blogs</title>
+	<style>
+    /* 1. Force the card container to take full height and use flexbox */
+    .media-entry {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 2. Make the text body expand to fill any empty space */
+    .media-entry .m-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 3. Push the 'Read More' link to the absolute bottom of the card */
+    .media-entry .more {
+        margin-top: auto;
+    }
+    
+    /* Optional: Ensures images are uniform if your source files vary slightly */
+    .media-entry img {
+        height: 200px; /* Adjust this value if you want taller/shorter images */
+        width: 100%;
+        object-fit: cover;
+    }
+</style>
 </head>
 <body>
 
