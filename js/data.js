@@ -47,8 +47,7 @@ The White Rann is renowned for its lively cultural expressions, including folk d
 Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his iconic campaign, “Kutch Nahin Dekha Toh Kuch Nahi Dekha”, meaning “If you haven’t seen it, you haven’t truly seen anything.” This powerful message perfectly conveys the unmatched charm of the Rann Utsav Festival and the timeless beauty of this extraordinary destination."
         },
         places: [
-            {name: "Road to Heaven", img:"images/kutch-9.jpg"},
-            { name: "White Desert", img: "images/kutch-1.jpg" },
+             { name: "White Desert", img: "images/kutch-1.jpg" },
             { name: "Kalo Dungar", img: "images/kutch-2.jpg" },
             { name: "Bhujodi", img: "images/kutch-3.jpg" },
             { name: "Aina Mahal", img: "images/kutch-4.jpg" },
