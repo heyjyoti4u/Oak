@@ -5,7 +5,7 @@ const travelData = {
     "delhi": {
         name: "Delhi",
         tagline: "The Heart of India",
-        heroImage: "images/delhi-parade.jpg", 
+        heroImage: "images/delhi-parade.jpg",
         events: [
             { title: "Beating Retreat", date: "29th Jan", img: "images/delhi-event1.jpg" },
             { title: "Surajkund Mela", date: "Feb 2nd", img: "images/delhi-event2.jpg" },
@@ -41,10 +41,12 @@ const travelData = {
         ],
         story: {
             heading: "Where Earth Meets Sky",
-            content: "Rann Utsav Tent City, located near Dholavira in Gujarat, is set within one of the most ecologically and culturally rich landscapes in the world. This remarkable region offers an extraordinary blend of pristine natural beauty, deep-rooted cultural heritage, and vibrant traditional celebrations. Held annually, the Rann Utsav Festival beautifully captures this spirit, presenting a colourful showcase of music, dance, art, and festive experiences that highlight the grandeur of this unique destination. Under the moonlit sky, the White Desert transforms into a surreal wonderland, creating an unforgettable spectacle of nature’s magic.
+            // FIXED: Used backticks (`) below to allow multi-line text
+            content: `Rann Utsav Tent City, located near Dholavira in Gujarat, is set within one of the most ecologically and culturally rich landscapes in the world. This remarkable region offers an extraordinary blend of pristine natural beauty, deep-rooted cultural heritage, and vibrant traditional celebrations. Held annually, the Rann Utsav Festival beautifully captures this spirit, presenting a colourful showcase of music, dance, art, and festive experiences that highlight the grandeur of this unique destination. Under the moonlit sky, the White Desert transforms into a surreal wonderland, creating an unforgettable spectacle of nature’s magic.
+
 The White Rann is renowned for its lively cultural expressions, including folk dances, traditional music, and exquisite handicrafts. Visitors can discover fine textiles, intricate embroidery, bandhani sarees, traditional jewellery, and detailed mirror work that reflect Gujarat’s rich artistic legacy. Guests are warmly welcomed by local communities, whose traditions and way of life remain closely connected to the region’s natural surroundings.
 
-Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his iconic campaign, “Kutch Nahin Dekha Toh Kuch Nahi Dekha”, meaning “If you haven’t seen it, you haven’t truly seen anything.” This powerful message perfectly conveys the unmatched charm of the Rann Utsav Festival and the timeless beauty of this extraordinary destination."
+Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his iconic campaign, “Kutch Nahin Dekha Toh Kuch Nahi Dekha”, meaning “If you haven’t seen it, you haven’t truly seen anything.” This powerful message perfectly conveys the unmatched charm of the Rann Utsav Festival and the timeless beauty of this extraordinary destination.`
         },
         places: [
              { name: "White Desert", img: "images/kutch-1.jpg" },
