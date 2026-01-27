@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="css/tiny-slider.css">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css"> <style>
-        /* Custom Styles for Dynamic Elements */
-        
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
         /* 1. Hero Image Dynamic Background */
         .dynamic-hero {
             height: 60vh;
@@ -32,15 +32,17 @@
         }
         .hero-content { z-index: 2; }
 
-        /* 2. Events Horizontal Scroller (Netflix Style) */
+        /* 2. Events Horizontal Scroller */
         .scrolling-wrapper {
             display: flex;
             flex-wrap: nowrap;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             padding-bottom: 20px;
+            scroll-behavior: smooth;
         }
         .scrolling-wrapper::-webkit-scrollbar { display: none; } /* Hide scrollbar */
+        
         .event-card {
             flex: 0 0 auto;
             width: 250px;
@@ -59,10 +61,6 @@
             object-fit: cover;
             border-radius: 8px;
         }
-        .scrolling-wrapper {
-    scroll-behavior: smooth;
-}
-
     </style>
 </head>
 <body>
@@ -93,7 +91,7 @@
                 <div class="col-12"><h2 class="heading">What's Happening</h2></div>
             </div>
             <div class="scrolling-wrapper" id="events-container">
-                </div>
+            </div>
         </div>
     </div>
 
@@ -114,7 +112,7 @@
                 <div class="col-12 text-center"><h2 class="heading">Popular Places to Visit</h2></div>
             </div>
             <div class="row" id="places-grid">
-                </div>
+            </div>
         </div>
     </div>
 
@@ -125,60 +123,57 @@
     <script src="js/data.js"></script>
 
     <script>
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
 
-    if (typeof travelData === "undefined") {
-        document.body.innerHTML = "<h1 class='text-center mt-5'>Data file not loaded.</h1>";
-        return;
-    }
+        if (typeof travelData === "undefined") {
+            document.body.innerHTML = "<h1 class='text-center mt-5'>Data file not loaded.</h1>";
+            return;
+        }
 
-    const params = new URLSearchParams(window.location.search);
-    const destId = params.get("id");
-    const data = travelData[destId];
+        // Get ID from URL (e.g., view.html?id=delhi)
+        const params = new URLSearchParams(window.location.search);
+        const destId = params.get("id");
+        const data = travelData[destId];
 
-    if (!data) {
-        document.body.innerHTML = "<h1 class='text-center mt-5'>Destination Not Found.</h1>";
-        return;
-    }
+        // Handle invalid ID
+        if (!data) {
+            document.body.innerHTML = "<h1 class='text-center mt-5'>Destination Not Found.</h1><p class='text-center'><a href='blog.html'>Go Back</a></p>";
+            return;
+        }
 
-    // HERO
-    document.getElementById("dest-name").innerText = "Explore " + data.name;
-    document.getElementById("dest-tagline").innerText = data.tagline;
-    document.getElementById("hero-section").style.backgroundImage = `url('${data.heroImage}')`;
+        // 1. Populate Hero Section
+        document.getElementById("dest-name").innerText = "Explore " + data.name;
+        document.getElementById("dest-tagline").innerText = data.tagline;
+        document.getElementById("hero-section").style.backgroundImage = `url('${data.heroImage}')`;
 
-    // EVENTS
-    const eventsContainer = document.getElementById("events-container");
-    eventsContainer.innerHTML = data.events.map(event => `
-        <div class="event-card">
-            <img src="${event.img}" alt="${event.title}" onerror="this.src='images/fallback.jpg'">
-            <div class="event-info">
-                <h5>${event.title}</h5>
-                <span class="text-primary">${event.date}</span>
+        // 2. Populate Events
+        const eventsContainer = document.getElementById("events-container");
+        eventsContainer.innerHTML = data.events.map(event => `
+            <div class="event-card">
+                <img src="${event.img}" alt="${event.title}" onerror="this.src='images/fallback.jpg'">
+                <div class="event-info">
+                    <h5>${event.title}</h5>
+                    <span class="text-primary">${event.date}</span>
+                </div>
             </div>
-        </div>
-    `).join("");
+        `).join("");
 
-    // STORY (preserve line breaks)
-    document.getElementById("story-heading").innerText = data.story.heading;
-    document.getElementById("story-content").innerHTML = data.story.content.replace(/\n/g, "<br><br>");
+        // 3. Populate Story (preserve line breaks)
+        document.getElementById("story-heading").innerText = data.story.heading;
+        document.getElementById("story-content").innerHTML = data.story.content.replace(/\n/g, "<br><br>");
 
-    // PLACES
-    const placesContainer = document.getElementById("places-grid");
-    placesContainer.innerHTML = data.places.map(place => `
-        <div class="col-6 col-md-3 mb-4 place-card" data-aos="fade-up">
-            <img src="${place.img}" alt="${place.name}" class="img-fluid mb-2" onerror="this.src='images/fallback.jpg'">
-            <h5 class="text-center mt-2">${place.name}</h5>
-        </div>
-    `).join("");
+        // 4. Populate Places Grid
+        const placesContainer = document.getElementById("places-grid");
+        placesContainer.innerHTML = data.places.map(place => `
+            <div class="col-6 col-md-3 mb-4 place-card" data-aos="fade-up">
+                <img src="${place.img}" alt="${place.name}" class="img-fluid mb-2" onerror="this.src='images/fallback.jpg'">
+                <h5 class="text-center mt-2">${place.name}</h5>
+            </div>
+        `).join("");
 
-    AOS.init({ once: true });
-});
-</script>
-
-
-    <script>
-        // Initialize AOS animation
-        AOS.init();
+        // Initialize Animation
+        AOS.init({ once: true });
+    });
     </script>
 </body>
 </html>
