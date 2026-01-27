@@ -1,7 +1,6 @@
 // js/data.js
 
 const travelData = {
-
     // ROW 1
     "delhi": {
         name: "Delhi",
@@ -109,11 +108,9 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Jal Mahal", img: "images/jaipur-7.jpg" },
             { name: "Bapu Bazaar", img: "images/jaipur-8.jpg" }
         ]
-    }
+    },
 
-    // Continue?  
-// js/data.js  (PART 2 CONTINUATION)
-
+    // ROW 2
     "lakshadweep": {
         name: "Lakshadweep",
         tagline: "India's Coral Paradise",
@@ -213,8 +210,8 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Top Station", img: "images/munnar-8.jpg" }
         ]
     },
-// js/data.js  (PART 3 CONTINUATION)
 
+    // ROW 3 (TRENDING)
     "ayodhya": {
         name: "Ayodhya",
         tagline: "City of Lord Rama",
@@ -315,5 +312,3 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
         ]
     }
 };
-
-// END OF travelData
