@@ -10506,8 +10506,7 @@ textarea {
   left: 0;
   font-size: 28px;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 100000;   /* force above everything */
   transform: translate(-50%, -50%);
-  transition: transform 0.05s linear;
 }
 
