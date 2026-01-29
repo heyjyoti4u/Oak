@@ -10506,7 +10506,7 @@ textarea {
   height: 32px;
   pointer-events: none;
   z-index: 999999;
-  background-image: url("./images/sprite.jpg"); /* path check karo */
+  background-image: url("images/sprite.jpg"); /* path check karo */
   background-repeat: no-repeat;
   image-rendering: pixelated;
   transform: translate(-50%, -50%);
