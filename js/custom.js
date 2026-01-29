@@ -122,49 +122,73 @@
   /* =========================
      Cursor Cat Follow Effect
   ========================== */
-  (function () {
+(function () {
+  const cat = document.getElementById("cursor-cat");
+  if (!cat) return;
+  if (window.innerWidth < 768) return;
 
-    const cat = document.getElementById("cursor-cat");
-    if (!cat) return;
-    if (window.innerWidth < 768) return; // Disable on mobile
+  const frameSize = 32;
+  let frame = 0;
+  let currentState = "run";
 
-    let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-    let catPos = { x: mouse.x, y: mouse.y };
+  const states = {
+    run:  { y: 0, frames: 8 },
+    idle: { y: 32, frames: 4 },
+    hold: { y: 64, frames: 2 }
+  };
 
-    document.addEventListener("mousemove", (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    });
+  let mouse = { x: innerWidth / 2, y: innerHeight / 2 };
+  let pos = { x: mouse.x, y: mouse.y };
+  let vel = { x: 0, y: 0 };
 
-    const speed = 0.12; // Fast and playful
+  document.addEventListener("mousemove", e => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
 
-    function animate() {
-      const dx = mouse.x - catPos.x;
-      const dy = mouse.y - catPos.y;
+  function updateSprite() {
+    const state = states[currentState];
+    frame = (frame + 1) % state.frames;
+    cat.style.backgroundPosition = 
+      `-${frame * frameSize}px -${state.y}px`;
+  }
 
-      catPos.x += dx * speed;
-      catPos.y += dy * speed;
+  setInterval(updateSprite, 100); // animation speed
 
-      const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+  function animate() {
+    const dx = mouse.x - pos.x;
+    const dy = mouse.y - pos.y;
+    const dist = Math.hypot(dx, dy);
 
-      cat.style.transform = `
-        translate(${catPos.x}px, ${catPos.y}px)
-        rotate(${angle}deg)
-      `;
+    vel.x += dx * 0.04;
+    vel.y += dy * 0.04;
+    vel.x *= 0.85;
+    vel.y *= 0.85;
 
-      // Catch animation
-      if (Math.hypot(dx, dy) < 6) {
-        cat.textContent = "😸";
-      } else {
-        cat.textContent = "🐱";
-      }
+    pos.x += vel.x;
+    pos.y += vel.y;
 
-      requestAnimationFrame(animate);
+    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+    cat.style.transform = `
+      translate(${pos.x}px, ${pos.y}px)
+      rotate(${angle}deg)
+    `;
+
+    // State logic
+    if (dist < 10) {
+      currentState = "hold";   // pakad liya, haath fold
+    } else if (dist < 60) {
+      currentState = "idle";   // slow walking
+    } else {
+      currentState = "run";    // bhag rahi hai
     }
 
-    animate();
+    requestAnimationFrame(animate);
+  }
 
-  })();
+  animate();
+})();
 
 
 })();
