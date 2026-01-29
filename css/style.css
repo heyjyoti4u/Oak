@@ -10502,12 +10502,11 @@ textarea {
 
 #cursor-cat {
   position: fixed;
+  top: 100px;
+  left: 100px;
   width: 32px;
   height: 32px;
-  pointer-events: none;
-  z-index: 999999;
   background-image: url("images/sprite_base_addon_2012_12_14.png");
   background-repeat: no-repeat;
-  image-rendering: pixelated;
-  transform: translate(-50%, -50%);
+  z-index: 999999;
 }
