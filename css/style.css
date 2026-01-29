@@ -10502,14 +10502,15 @@ textarea {
 
 #cursor-cat {
   position: fixed;
+  top: 200px;
+  left: 200px;
   width: 32px;
   height: 32px;
-  pointer-events: none;
   z-index: 999999;
-  background-image: url("background-image: url("../images/sprite.jpg");
-"); /* path check karo */
+  background-image: url("../images/sprite.jpg");
   background-repeat: no-repeat;
+  background-position: 0 0;
   image-rendering: pixelated;
-  transform: translate(-50%, -50%);
 }
+
 
