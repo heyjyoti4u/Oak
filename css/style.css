@@ -10500,6 +10500,99 @@ textarea {
         background: #f59b74;
         color: #fff; }
 
- 
+ /* ================================
+   Privacy Policy Styling
+================================ */
+
+.privacy-policy {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: "Inter", sans-serif;
+  line-height: 1.8;
+  color: #333;
+}
+
+.privacy-policy h2 {
+  font-family: "Brygada 1918", serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+  position: relative;
+}
+
+.privacy-policy h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #1e90ff;
+  display: block;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.privacy-policy p {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #444;
+}
+
+.privacy-policy ul {
+  margin: 15px 0 25px 20px;
+  padding-left: 20px;
+}
+
+.privacy-policy ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  list-style-type: disc;
+}
+
+.privacy-policy strong {
+  color: #000;
+}
+
+.privacy-policy a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.privacy-policy a:hover {
+  text-decoration: underline;
+}
+
+/* Highlight box (optional) */
+.privacy-highlight {
+  background: #f8f9fa;
+  border-left: 4px solid #1e90ff;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 4px;
+}
+
+.privacy-highlight p {
+  margin: 0;
+  font-size: 15.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .privacy-policy {
+    padding: 40px 15px;
+  }
+
+  .privacy-policy h2 {
+    font-size: 24px;
+  }
+
+  .privacy-policy p,
+  .privacy-policy ul li {
+    font-size: 15px;
+  }
+}
+
 
 
