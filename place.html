@@ -14,51 +14,110 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
     <style>
-        /* Minimalist Full Screen Hero */
+        /* Modern Hero Section */
         .place-hero {
-            height: 70vh;
+            height: 75vh;
             background-size: cover;
             background-position: center;
             position: relative;
             display: flex;
-            align-items: flex-end; /* Text at bottom */
+            align-items: flex-end;
             justify-content: flex-start;
             color: white;
-            padding-bottom: 50px;
+            padding-bottom: 60px;
         }
         .hero-overlay {
-            background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1));
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 100%);
             position: absolute; top:0; left:0; right:0; bottom:0;
         }
         .place-content { z-index: 2; position: relative; }
         
         .place-title {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 700;
             font-family: 'Brygada 1918', serif;
             margin-bottom: 10px;
-        }
-        
-        .place-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-top: 30px;
-            font-family: 'Inter', sans-serif;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
         .back-btn {
             color: white;
             text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
             margin-bottom: 20px;
-            border: 1px solid white;
-            padding: 8px 20px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            padding: 10px 25px;
             border-radius: 30px;
             transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.4);
         }
-        .back-btn:hover { background: white; color: black; }
+        .back-btn:hover { background: white; color: #1A374D; }
+
+        /* Content Styling */
+        .content-section { padding: 80px 0; }
+        
+        .history-text {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #444;
+            font-family: 'Inter', sans-serif;
+            text-align: justify;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #1A374D;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .info-card h4 {
+            font-family: 'Brygada 1918', serif;
+            color: #1A374D;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .fact-list {
+            list-style: none;
+            padding: 0;
+        }
+        .fact-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: #555;
+        }
+        .fact-list li::before {
+            content: "•";
+            color: #1A374D;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        .travel-tip {
+            display: flex;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+        .tip-icon {
+            font-size: 1.5rem;
+            color: #1A374D;
+            margin-right: 15px;
+            margin-top: -3px;
+        }
+        .tip-content strong { display: block; color: #333; }
+        .tip-content span { color: #666; }
+
     </style>
 </head>
 <body>
@@ -78,29 +137,64 @@
     <div id="place-hero" class="place-hero">
         <div class="hero-overlay"></div>
         <div class="container place-content" data-aos="fade-up">
-            <a href="#" id="back-link" class="back-btn">&larr; Back to City</a>
+            <a href="#" id="back-link" class="back-btn">
+                <span class="icon-arrow_back me-2"></span> Back to City
+            </a>
             <h1 class="place-title" id="place-name">Loading...</h1>
         </div>
     </div>
 
-    <div class="section">
+    <div class="content-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="mb-4">About this Place</h3>
-                    <div id="place-desc" class="place-description">
-                        Loading details...
+            <div class="row">
+                
+                <div class="col-lg-7 pe-lg-5" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="heading mb-4">Historical Significance</h2>
+                    <div id="place-history" class="history-text">
+                        </div>
+                </div>
+
+                <div class="col-lg-5 ps-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    
+                    <div class="info-card">
+                        <h4>Key Highlights</h4>
+                        <ul class="fact-list" id="place-facts">
+                            </ul>
                     </div>
+
+                    <div class="info-card" style="border-left-color: #d9534f;">
+                        <h4>Traveller Essentials</h4>
+                        
+                        <div class="travel-tip">
+                            <span class="icon-spoon-knife tip-icon"></span>
+                            <div class="tip-content">
+                                <strong>Must Try Cuisine</strong>
+                                <span id="place-cuisine">Loading...</span>
+                            </div>
+                        </div>
+
+                        <hr style="opacity: 0.1;">
+
+                        <div class="travel-tip">
+                            <span class="icon-clock-o tip-icon"></span>
+                            <div class="tip-content">
+                                <strong>Best Time to Visit</strong>
+                                <span id="place-time">Loading...</span>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="site-footer">
+    <div class="site-footer bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p class="mb-0">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">The strangers.co</a> Distributed By <a href="https:/themewagon.com" target="_blank">Jyoti</a></p>
+                    <p class="mb-0 text-dark">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Passport</p>
                 </div>
             </div>
         </div>
@@ -114,7 +208,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             
-            // 1. Get Params (dest=delhi, place=0)
+            // 1. Get Params
             const params = new URLSearchParams(window.location.search);
             const destId = params.get("dest");
             const placeIndex = params.get("place");
@@ -133,22 +227,28 @@
                 return;
             }
 
-            // 3. Inject Data into HTML
-            // Hero Image & Title
+            // 3. Inject Data
+            
+            // Hero
             document.getElementById("place-hero").style.backgroundImage = `url('${placeData.img}')`;
             document.getElementById("place-name").innerText = placeData.name;
-            
-            // Back Button Logic
             document.getElementById("back-link").href = `view.html?id=${destId}`;
 
-            // Description (Split into paragraphs if needed, otherwise just text)
-            // If data.js has 'about', use it. If not, show a fallback.
-            const descText = placeData.about ? placeData.about : "History and details coming soon for " + placeData.name;
-            
-            // We split long text by full stops to make 'points' visual if it's just one block
-            // OR simply display the text. User asked for "points mein" history type.
-            // Let's wrap sentences in paragraph tags for better reading.
-            document.getElementById("place-desc").innerHTML = `<p>${descText}</p>`;
+            // History (Fallback if empty)
+            const historyText = placeData.history ? placeData.history : "Detailed history for this location is coming soon.";
+            document.getElementById("place-history").innerHTML = `<p>${historyText}</p>`;
+
+            // Facts (Bullet Points)
+            const factsContainer = document.getElementById("place-facts");
+            if (placeData.facts && placeData.facts.length > 0) {
+                factsContainer.innerHTML = placeData.facts.map(fact => `<li>${fact}</li>`).join("");
+            } else {
+                factsContainer.innerHTML = "<li>Explore this place to find out more!</li>";
+            }
+
+            // Cuisine & Time
+            document.getElementById("place-cuisine").innerText = placeData.cuisine || "Local delicacies";
+            document.getElementById("place-time").innerText = placeData.bestTime || "Anytime";
 
             AOS.init({ once: true });
         });
