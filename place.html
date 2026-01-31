@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Place Details</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+        /* Minimalist Full Screen Hero */
+        .place-hero {
+            height: 70vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: flex-end; /* Text at bottom */
+            justify-content: flex-start;
+            color: white;
+            padding-bottom: 50px;
+        }
+        .hero-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1));
+            position: absolute; top:0; left:0; right:0; bottom:0;
+        }
+        .place-content { z-index: 2; position: relative; }
+        
+        .place-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            font-family: 'Brygada 1918', serif;
+            margin-bottom: 10px;
+        }
+        
+        .place-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-top: 30px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: white; color: black; }
+    </style>
+</head>
+<body>
+
+    <nav class="site-nav mt-3" style="position: absolute; top:0; width:100%; z-index: 10;">
+        <div class="container">
+            <div class="site-navigation">
+                <a href="index.html" class="logo m-0 float-start text-white">Passport</a>
+                <ul class="js-clone-nav d-none d-lg-inline-block text-center site-menu p-0 m-0 float-end">
+                    <li><a href="index.html" class="text-white">Home</a></li>
+                    <li><a href="blog.html" class="text-white">Blogs</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="place-hero" class="place-hero">
+        <div class="hero-overlay"></div>
+        <div class="container place-content" data-aos="fade-up">
+            <a href="#" id="back-link" class="back-btn">&larr; Back to City</a>
+            <h1 class="place-title" id="place-name">Loading...</h1>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="mb-4">About this Place</h3>
+                    <div id="place-desc" class="place-description">
+                        Loading details...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">The strangers.co</a> Distributed By <a href="https:/themewagon.com" target="_blank">Jyoti</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/data.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            // 1. Get Params (dest=delhi, place=0)
+            const params = new URLSearchParams(window.location.search);
+            const destId = params.get("dest");
+            const placeIndex = params.get("place");
+
+            // 2. Validate Data
+            if (typeof travelData === "undefined" || !travelData[destId]) {
+                document.body.innerHTML = "<div class='container mt-5 text-center'><h1>Error: Destination not found.</h1></div>";
+                return;
+            }
+
+            const cityData = travelData[destId];
+            const placeData = cityData.places[placeIndex];
+
+            if (!placeData) {
+                document.body.innerHTML = "<div class='container mt-5 text-center'><h1>Error: Place not found.</h1></div>";
+                return;
+            }
+
+            // 3. Inject Data into HTML
+            // Hero Image & Title
+            document.getElementById("place-hero").style.backgroundImage = `url('${placeData.img}')`;
+            document.getElementById("place-name").innerText = placeData.name;
+            
+            // Back Button Logic
+            document.getElementById("back-link").href = `view.html?id=${destId}`;
+
+            // Description (Split into paragraphs if needed, otherwise just text)
+            // If data.js has 'about', use it. If not, show a fallback.
+            const descText = placeData.about ? placeData.about : "History and details coming soon for " + placeData.name;
+            
+            // We split long text by full stops to make 'points' visual if it's just one block
+            // OR simply display the text. User asked for "points mein" history type.
+            // Let's wrap sentences in paragraph tags for better reading.
+            document.getElementById("place-desc").innerHTML = `<p>${descText}</p>`;
+
+            AOS.init({ once: true });
+        });
+    </script>
+</body>
+</html>
