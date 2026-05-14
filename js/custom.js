@@ -155,6 +155,18 @@
 
   setInterval(updateSprite, 100); // animation speed
 
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, (error) => {
+        console.log('ServiceWorker registration failed: ', error);
+      });
+  });
+}
+
+  
   function animate() {
     const dx = mouse.x - pos.x;
     const dy = mouse.y - pos.y;
