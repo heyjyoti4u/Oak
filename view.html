@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
         /* 1. Hero Image Dynamic Background */
@@ -78,6 +79,35 @@
         .place-link:hover h5 {
             color: #1A374D; /* Change text color on hover */
         }
+
+        /* NEW: Smooth page fade-in */
+        body { opacity: 0; transition: opacity 0.5s ease; }
+        body.loaded { opacity: 1; }
+
+        /* NEW: Plan itinerary CTA button */
+        .btn-plan-trip {
+            display: inline-flex;
+            align-items: center;
+            background: #f17945;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(241, 121, 69, 0.35);
+            transition: 0.3s;
+        }
+        .btn-plan-trip:hover {
+            background: #fff;
+            color: #1A374D;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.2);
+        }
+
+        /* NEW: Smoother card interactions */
+        .event-card, .place-card img { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+        .event-card:hover { transform: translateY(-6px); box-shadow: 0 14px 28px rgba(0,0,0,0.14); }
+        .place-link:hover .place-card img { transform: scale(1.04); }
     </style>
 </head>
 <body>
@@ -100,7 +130,10 @@
         <div class="hero-overlay"></div>
         <div class="container hero-content" data-aos="fade-up">
             <h1 class="heading" id="dest-name">Loading...</h1>
-            <p id="dest-tagline" class="mb-5" style="font-size: 1.2rem;">Please wait</p>
+            <p id="dest-tagline" class="mb-4" style="font-size: 1.2rem;">Please wait</p>
+            <a href="#" id="itinerary-cta" class="btn-plan-trip">
+                <span class="fa-regular fa-calendar me-2"></span> Plan Your Day-Wise Itinerary
+            </a>
         </div>
     </div>
 
@@ -160,13 +193,20 @@
         // Handle invalid ID
         if (!data) {
             document.body.innerHTML = "<h1 class='text-center mt-5'>Destination Not Found.</h1><p class='text-center'><a href='blog.html'>Go Back</a></p>";
+            document.body.classList.add("loaded");
             return;
         }
 
         // 1. Populate Hero Section
         document.getElementById("dest-name").innerText = "Explore " + data.name;
         document.getElementById("dest-tagline").innerText = data.tagline;
-        document.getElementById("hero-section").style.backgroundImage = `url('${data.heroImage}')`;
+        document.getElementById("itinerary-cta").href = `itinerary.html?id=${destId}`;
+
+        // Preload hero image, fall back gracefully if it's missing
+        const heroImg = new Image();
+        heroImg.onload = () => { document.getElementById("hero-section").style.backgroundImage = `url('${data.heroImage}')`; };
+        heroImg.onerror = () => { document.getElementById("hero-section").style.backgroundImage = `url('images/fallback.jpg')`; };
+        heroImg.src = data.heroImage;
 
         // 2. Populate Events
         const eventsContainer = document.getElementById("events-container");
@@ -201,6 +241,7 @@
 
         // Initialize Animation
         AOS.init({ once: true });
+        document.body.classList.add("loaded");
     });
     </script>
     <div class="site-footer">
@@ -214,12 +255,12 @@
                     </div> <div class="widget">
                         <h3>Connect</h3>
                         <ul class="list-unstyled social">
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                            <li><a href="#"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                            <li><a href="#"><span class="icon-pinterest"></span></a></li>
-                            <li><a href="#"><span class="icon-dribbble"></span></a></li>
+                            <li><a href="#"><span class="fa-brands fa-instagram"></span></a></li>
+                            <li><a href="#"><span class="fa-brands fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fa-brands fa-facebook"></span></a></li>
+                            <li><a href="#"><span class="fa-brands fa-linkedin"></span></a></li>
+                            <li><a href="#"><span class="fa-brands fa-pinterest"></span></a></li>
+                            <li><a href="#"><span class="fa-brands fa-dribbble"></span></a></li>
                         </ul>
                     </div> </div> <div class="col-lg-2 ml-auto">
                     <div class="widget">
