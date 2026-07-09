@@ -177,6 +177,20 @@
         </div>      
     </div>
 
+    <div class="section bg-light">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="0">
+                    <h2 class="heading mb-5">Latest Travel News</h2>
+                </div>
+            </div>
+
+            <div class="row align-items-stretch" id="news-row">
+            </div>
+        </div>
+    </div>
+
 
 
 <div class="site-footer">
@@ -243,6 +257,7 @@
 
          
         <script src="js/data.js"></script>
+        <script src="js/news-data.js"></script>
 
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/tiny-slider.js"></script>
@@ -324,6 +339,34 @@
 
                 // Fill Row 3 (Last 4 items)
                 fillRow("blog-row-3", 8, 12);
+
+                // ---- Latest Travel News ----
+                if (typeof newsData !== 'undefined') {
+                    const newsContainer = document.getElementById("news-row");
+                    let newsHtml = "";
+                    let delay = 100;
+                    newsData.forEach(item => {
+                        newsHtml += `
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="${delay}">
+                            <div class="media-entry">
+                                <a href="news.html?id=${item.id}">
+                                    <img src="${item.image}" alt="${item.title}" class="img-fluid" onerror="this.src='images/fallback.jpg'">
+                                </a>
+                                <div class="bg-white m-body">
+                                    <span class="date">${item.date}</span>
+                                    <h3><a href="news.html?id=${item.id}">${item.title}</a></h3>
+                                    <p>${item.summary}</p>
+                                    <a href="news.html?id=${item.id}" class="more d-flex align-items-center float-start">
+                                        <span class="label">Learn More</span>
+                                        <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>`;
+                        delay += 100;
+                    });
+                    newsContainer.innerHTML = newsHtml;
+                }
             });
         </script>
     </body>
