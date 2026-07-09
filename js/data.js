@@ -25,7 +25,11 @@ const travelData = {
             { name: "Lotus Temple", img: "images/delhi-5.jpg" },
             { name: "Akshardham", img: "images/delhi-6.jpg" },
             { name: "Chandni Chowk", img: "images/delhi-7.jpg" },
-            { name: "Hauz Khas", img: "images/delhi-8.jpg" }
+            { name: "Hauz Khas", img: "images/delhi-8.jpg" },
+            { name: "Jama Masjid", img: "images/delhi-parade.jpg" },
+            { name: "Rashtrapati Bhavan", img: "images/delhi-parade.jpg" },
+            { name: "Kartavya Path", img: "images/delhi-parade.jpg" },
+            { name: "Dilli Haat", img: "images/delhi-parade.jpg" }
         ]
     },
 
@@ -56,7 +60,11 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Mandvi Beach", img: "images/kutch-5.jpg" },
             { name: "Prag Mahal", img: "images/kutch-6.jpg" },
             { name: "Dholavira", img: "images/kutch-7.jpg" },
-            { name: "Narayan Sarovar", img: "images/kutch-8.jpg" }
+            { name: "Narayan Sarovar", img: "images/kutch-8.jpg" },
+            { name: "Kutch Museum", img: "images/kutch-9.jpg" },
+            { name: "Vijay Vilas Palace", img: "images/rann-utsav.jpg" },
+            { name: "Kandla Port", img: "images/rann-utsav.jpg" },
+            { name: "Rann Utsav Tent City", img: "images/rann-utsav.jpg" }
         ]
     },
 
@@ -81,7 +89,11 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Nanda Devi Park", img: "images/auli-5.jpg" },
             { name: "Chattrakund", img: "images/auli-6.jpg" },
             { name: "Chenab Lake", img: "images/auli-7.jpg" },
-            { name: "Kwani Bugyal", img: "images/auli-8.jpg" }
+            { name: "Kwani Bugyal", img: "images/auli-8.jpg" },
+            { name: "Auli Ski Resort", img: "images/auli-ski.jpg" },
+            { name: "Trishul Peak Viewpoint", img: "images/auli-ski.jpg" },
+            { name: "Auli Bugyal Ridge", img: "images/auli-ski.jpg" },
+            { name: "Kalpvriksha Tree", img: "images/auli-ski.jpg" }
         ]
     },
 
@@ -107,7 +119,11 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Nahargarh Fort", img: "images/jaipur-5.jpg" },
             { name: "Albert Hall", img: "images/jaipur-6.jpg" },
             { name: "Jal Mahal", img: "images/jaipur-7.jpg" },
-            { name: "Bapu Bazaar", img: "images/jaipur-8.jpg" }
+            { name: "Bapu Bazaar", img: "images/jaipur-8.jpg" },
+            { name: "Birla Mandir", img: "images/jaipur-lit.jpg" },
+            { name: "Jaigarh Fort", img: "images/jaipur-lit.jpg" },
+            { name: "Central Park", img: "images/jaipur-lit.jpg" },
+            { name: "Chokhi Dhani", img: "images/jaipur-lit.jpg" }
         ]
     },
 
@@ -133,7 +149,11 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Kalpeni", img: "images/lak-5.jpg" },
             { name: "Marine Museum", img: "images/lak-6.jpg" },
             { name: "Kadmat", img: "images/lak-7.jpg" },
-            { name: "Lighthouse", img: "images/lak-8.jpg" }
+            { name: "Lighthouse", img: "images/lak-8.jpg" },
+            { name: "Thinnakara Island", img: "images/lakshadweep.jpg" },
+            { name: "Suheli Valiyakara", img: "images/lakshadweep.jpg" },
+            { name: "Kiltan Island", img: "images/lakshadweep.jpg" },
+            { name: "Androth Island", img: "images/lakshadweep.jpg" }
         ]
     },
 
@@ -158,7 +178,11 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Elephant Stables", img: "images/hampi-5.jpg" },
             { name: "Matanga Hill", img: "images/hampi-6.jpg" },
             { name: "Tungabhadra River", img: "images/hampi-7.jpg" },
-            { name: "Hippie Island", img: "images/hampi-8.jpg" }
+            { name: "Hippie Island", img: "images/hampi-8.jpg" },
+            { name: "Sanapur Lake", img: "images/hampi.jpg" },
+            { name: "Anegundi Village", img: "images/hampi.jpg" },
+            { name: "Anjaneya Hill", img: "images/hampi.jpg" },
+            { name: "Queen's Bath", img: "images/hampi.jpg" }
         ]
     },
 
@@ -183,7 +207,11 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Manikarnika Ghat", img: "images/varanasi-5.jpg" },
             { name: "Ramnagar Fort", img: "images/varanasi-6.jpg" },
             { name: "Sankat Mochan", img: "images/varanasi-7.jpg" },
-            { name: "BHU Campus", img: "images/varanasi-8.jpg" }
+            { name: "BHU Campus", img: "images/varanasi-8.jpg" },
+            { name: "Tulsi Manas Temple", img: "images/varanasi.jpg" },
+            { name: "Man Mandir Ghat", img: "images/varanasi.jpg" },
+            { name: "Kashi Vishwanath Corridor", img: "images/varanasi.jpg" },
+            { name: "Chunar Fort", img: "images/varanasi.jpg" }
         ]
     },
 
@@ -208,7 +236,11 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Anamudi Peak", img: "images/munnar-5.jpg" },
             { name: "Pothamedu View", img: "images/munnar-6.jpg" },
             { name: "Attukad Falls", img: "images/munnar-7.jpg" },
-            { name: "Top Station", img: "images/munnar-8.jpg" }
+            { name: "Top Station", img: "images/munnar-8.jpg" },
+            { name: "Kundala Lake", img: "images/munnar.jpg" },
+            { name: "Blossom Park", img: "images/munnar.jpg" },
+            { name: "Chinnakanal Waterfalls", img: "images/munnar.jpg" },
+            { name: "Marayoor Sandalwood Forest", img: "images/munnar.jpg" }
         ]
     },
 
@@ -234,7 +266,11 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Nageshwarnath", img: "images/ayo-5.jpg" },
             { name: "Ram Ki Paidi", img: "images/ayo-6.jpg" },
             { name: "Mani Parbat", img: "images/ayo-7.jpg" },
-            { name: "Dashrath Mahal", img: "images/ayo-8.jpg" }
+            { name: "Dashrath Mahal", img: "images/ayo-8.jpg" },
+            { name: "Treta Ke Thakur", img: "images/ayodhya.jpg" },
+            { name: "Chhoti Devkali Temple", img: "images/ayodhya.jpg" },
+            { name: "Guptar Ghat", img: "images/ayodhya.jpg" },
+            { name: "Bharat Kund", img: "images/ayodhya.jpg" }
         ]
     },
 
@@ -259,7 +295,11 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "War Memorial", img: "images/tawang-5.jpg" },
             { name: "Gorichen Peak", img: "images/tawang-6.jpg" },
             { name: "Bumla Pass", img: "images/tawang-7.jpg" },
-            { name: "Jaswant Garh", img: "images/tawang-8.jpg" }
+            { name: "Jaswant Garh", img: "images/tawang-8.jpg" },
+            { name: "Pankang Teng Tso Lake", img: "images/tawang.jpg" },
+            { name: "Urgelling Monastery", img: "images/tawang.jpg" },
+            { name: "Tawang Craft Centre", img: "images/tawang.jpg" },
+            { name: "Zemithang Valley", img: "images/tawang.jpg" }
         ]
     },
 
@@ -284,7 +324,11 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Paradise Beach", img: "images/gok-5.jpg" },
             { name: "Mirjan Fort", img: "images/gok-6.jpg" },
             { name: "Shiva Statue", img: "images/gok-7.jpg" },
-            { name: "Yana Caves", img: "images/gok-8.jpg" }
+            { name: "Yana Caves", img: "images/gok-8.jpg" },
+            { name: "Kotitheertha Pond", img: "images/gokarna.jpg" },
+            { name: "Vibhooti Falls", img: "images/gokarna.jpg" },
+            { name: "Gokarna Market", img: "images/gokarna.jpg" },
+            { name: "Belekan Beach", img: "images/gokarna.jpg" }
         ]
     },
 
@@ -309,7 +353,11 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Bada Bagh", img: "images/jai-5.jpg" },
             { name: "Jain Temples", img: "images/jai-6.jpg" },
             { name: "Kuldhara", img: "images/jai-7.jpg" },
-            { name: "Tanot Mata", img: "images/jai-8.jpg" }
+            { name: "Tanot Mata", img: "images/jai-8.jpg" },
+            { name: "Desert National Park", img: "images/jaisalmer.jpg" },
+            { name: "Longewala War Memorial", img: "images/jaisalmer.jpg" },
+            { name: "Akal Wood Fossil Park", img: "images/jaisalmer.jpg" },
+            { name: "Amar Sagar", img: "images/jaisalmer.jpg" }
         ]
     }
 };
