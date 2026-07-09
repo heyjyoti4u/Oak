@@ -15,7 +15,9 @@
   /* =========================
      Rellax Parallax
   ========================== */
-  var rellax = new Rellax('.rellax');
+  if (typeof Rellax !== 'undefined') {
+    var rellax = new Rellax('.rellax');
+  }
 
 
   /* =========================
@@ -38,8 +40,8 @@
     }
 
     setTimeout(function () {
-      fadeOut(loader);
-      fadeOut(overlay);
+      if (loader) fadeOut(loader);
+      if (overlay) fadeOut(overlay);
     }, 200);
   };
   preloader();
@@ -112,9 +114,11 @@
      GLightbox
   ========================== */
   var lightbox = function () {
-    GLightbox({
-      selector: '.glightbox3'
-    });
+    if (typeof GLightbox !== 'undefined') {
+      GLightbox({
+        selector: '.glightbox3'
+      });
+    }
   };
   lightbox();
 
