@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
         /* Modern Hero Section */
@@ -120,6 +121,29 @@
         .tip-content strong { display: block; color: #333; }
         .tip-content span { color: #666; }
 
+        /* NEW: Smooth page fade-in */
+        body { opacity: 0; transition: opacity 0.5s ease; }
+        body.loaded { opacity: 1; }
+
+        /* NEW: Itinerary CTA button */
+        .btn-plan-trip {
+            display: inline-flex;
+            align-items: center;
+            background: #1A374D;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: 10px;
+            transition: 0.3s;
+            margin-top: 6px;
+        }
+        .btn-plan-trip:hover {
+            background: #f17945;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+        }
     </style>
 </head>
 <body>
@@ -140,7 +164,7 @@
         <div class="hero-overlay"></div>
         <div class="container place-content" data-aos="fade-up">
             <a href="#" id="back-link" class="back-btn">
-                <span class="icon-arrow_back me-2"></span> Back to City
+                <span class="fa-solid fa-arrow-left me-2"></span> Back to City
             </a>
             <h1 class="place-title" id="place-name">Loading...</h1>
         </div>
@@ -168,7 +192,7 @@
                         <h4>Traveller Essentials</h4>
                         
                         <div class="travel-tip">
-                            <span class="icon-spoon-knife tip-icon"></span>
+                            <span class="fa-solid fa-utensils tip-icon"></span>
                             <div class="tip-content">
                                 <strong>Must Try Cuisine</strong>
                                 <span id="place-cuisine">Loading...</span>
@@ -178,7 +202,7 @@
                         <hr style="opacity: 0.1;">
 
                         <div class="travel-tip">
-                            <span class="icon-clock-o tip-icon"></span>
+                            <span class="fa-regular fa-clock tip-icon"></span>
                             <div class="tip-content">
                                 <strong>Best Time to Visit</strong>
                                 <span id="place-time">Loading...</span>
@@ -186,6 +210,10 @@
                         </div>
 
                     </div>
+
+                    <a href="#" id="itinerary-link" class="btn-plan-trip w-100 justify-content-center">
+                        <span class="fa-regular fa-calendar me-2"></span> See Full Day-Wise Itinerary
+                    </a>
 
                 </div>
             </div>
@@ -218,6 +246,7 @@
             // 2. Validate Data
             if (typeof travelData === "undefined" || !travelData[destId]) {
                 document.body.innerHTML = "<div class='container mt-5 text-center'><h1>Error: Destination not found.</h1></div>";
+                document.body.classList.add("loaded");
                 return;
             }
 
@@ -226,15 +255,21 @@
 
             if (!placeData) {
                 document.body.innerHTML = "<div class='container mt-5 text-center'><h1>Error: Place not found.</h1></div>";
+                document.body.classList.add("loaded");
                 return;
             }
 
             // 3. Inject Data
             
-            // Hero
-            document.getElementById("place-hero").style.backgroundImage = `url('${placeData.img}')`;
+            // Hero (preload the image so a missing file falls back gracefully)
+            const heroImg = new Image();
+            heroImg.onload = () => { document.getElementById("place-hero").style.backgroundImage = `url('${placeData.img}')`; };
+            heroImg.onerror = () => { document.getElementById("place-hero").style.backgroundImage = `url('images/fallback.jpg')`; };
+            heroImg.src = placeData.img;
+
             document.getElementById("place-name").innerText = placeData.name;
             document.getElementById("back-link").href = `view.html?id=${destId}`;
+            document.getElementById("itinerary-link").href = `itinerary.html?id=${destId}`;
 
             // History (Fallback if empty)
             const historyText = placeData.history ? placeData.history : "Detailed history for this location is coming soon.";
@@ -253,6 +288,7 @@
             document.getElementById("place-time").innerText = placeData.bestTime || "Anytime";
 
             AOS.init({ once: true });
+            document.body.classList.add("loaded");
         });
     </script>
 </body>
