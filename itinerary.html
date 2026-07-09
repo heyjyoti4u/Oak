@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trip Itinerary</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root{
+            --oak-navy:#1A374D;
+            --oak-navy-dark:#122736;
+            --oak-accent:#f17945;
+            --oak-cream:#fbf7f2;
+        }
+
+        html{ scroll-behavior: smooth; }
+
+        body{ font-family:'Inter', sans-serif; background:#fff; }
+
+        /* ---------- Loading shimmer ---------- */
+        #itin-loader{
+            position:fixed; inset:0; z-index:9999; background:var(--oak-navy);
+            display:flex; align-items:center; justify-content:center; flex-direction:column;
+            transition: opacity .5s ease, visibility .5s ease;
+        }
+        #itin-loader.hide{ opacity:0; visibility:hidden; }
+        .loader-ring{
+            width:46px; height:46px; border-radius:50%;
+            border:3px solid rgba(255,255,255,0.2); border-top-color:#fff;
+            animation: spin 0.9s linear infinite; margin-bottom:16px;
+        }
+        @keyframes spin{ to{ transform:rotate(360deg); } }
+        #itin-loader span{ color:#fff; opacity:.8; letter-spacing:1px; font-size:.85rem; text-transform:uppercase; }
+
+        /* ---------- Hero ---------- */
+        .itin-hero{
+            height:56vh; min-height:380px; background-size:cover; background-position:center;
+            position:relative; display:flex; align-items:flex-end; color:#fff;
+        }
+        .itin-hero .hero-overlay{
+            position:absolute; inset:0;
+            background:linear-gradient(to top, rgba(10,20,28,0.95) 0%, rgba(10,20,28,0.55) 55%, rgba(10,20,28,0.15) 100%);
+        }
+        .itin-hero-content{ position:relative; z-index:2; padding-bottom:44px; width:100%; }
+        .back-btn{
+            color:#fff; text-decoration:none; font-weight:600; display:inline-flex; align-items:center;
+            margin-bottom:22px; background:rgba(255,255,255,0.15); backdrop-filter:blur(6px);
+            padding:9px 22px; border-radius:30px; transition:.3s; border:1px solid rgba(255,255,255,0.35);
+            font-size:.9rem;
+        }
+        .back-btn:hover{ background:#fff; color:var(--oak-navy); }
+        .itin-eyebrow{
+            text-transform:uppercase; letter-spacing:3px; font-size:.78rem; color:var(--oak-accent);
+            font-weight:700; margin-bottom:10px; display:block;
+        }
+        .itin-title{
+            font-family:'Brygada 1918', serif; font-weight:700; font-size:3.2rem; margin-bottom:6px;
+            text-shadow:2px 2px 14px rgba(0,0,0,0.45);
+        }
+        .itin-tagline{ font-size:1.1rem; opacity:.9; }
+
+        /* ---------- Trip overview strip ---------- */
+        .trip-strip{
+            background:#fff; border-radius:16px; box-shadow:0 14px 40px rgba(0,0,0,0.09);
+            margin-top:-46px; position:relative; z-index:5; padding:26px 10px;
+        }
+        .trip-stat{ text-align:center; padding:10px 6px; }
+        .trip-stat .stat-icon{
+            width:44px; height:44px; border-radius:50%; background:rgba(26,55,77,0.08);
+            color:var(--oak-navy); display:flex; align-items:center; justify-content:center;
+            margin:0 auto 10px; font-size:1.15rem;
+        }
+        .trip-stat .stat-label{ font-size:.72rem; text-transform:uppercase; letter-spacing:1px; color:#8a8f98; font-weight:600; }
+        .trip-stat .stat-value{ font-size:.95rem; color:#222; font-weight:600; margin-top:2px; }
+
+        /* ---------- Sticky day tabs ---------- */
+        .day-tabs-wrap{
+            position:sticky; top:0; z-index:50; background:#fff; border-bottom:1px solid #eee;
+            box-shadow:0 4px 18px rgba(0,0,0,0.04);
+        }
+        .day-tabs{
+            display:flex; gap:6px; overflow-x:auto; padding:14px 0; scrollbar-width:none;
+        }
+        .day-tabs::-webkit-scrollbar{ display:none; }
+        .day-tab-btn{
+            flex:0 0 auto; border:none; background:#f4f5f7; color:#555; font-weight:600;
+            padding:10px 20px; border-radius:30px; font-size:.88rem; white-space:nowrap;
+            transition:.25s; cursor:pointer;
+        }
+        .day-tab-btn:hover{ background:#e9ebef; }
+        .day-tab-btn.active{ background:var(--oak-navy); color:#fff; box-shadow:0 6px 16px rgba(26,55,77,0.28); }
+
+        /* ---------- Day sections ---------- */
+        .day-section{ padding:70px 0 20px; scroll-margin-top:86px; }
+        .day-section:first-of-type{ padding-top:56px; }
+        .day-kicker{
+            display:inline-block; background:var(--oak-navy); color:#fff; font-weight:700;
+            font-size:.78rem; letter-spacing:1px; text-transform:uppercase; padding:6px 16px;
+            border-radius:20px; margin-bottom:14px;
+        }
+        .day-heading{
+            font-family:'Brygada 1918', serif; font-weight:700; font-size:2.1rem; color:#1c1c1c; margin-bottom:36px;
+        }
+
+        /* timeline */
+        .day-timeline{ position:relative; padding-left:34px; }
+        .day-timeline::before{
+            content:""; position:absolute; left:9px; top:6px; bottom:6px; width:2px;
+            background:repeating-linear-gradient(to bottom, #dfe3e8 0, #dfe3e8 6px, transparent 6px, transparent 12px);
+        }
+        .slot-card{
+            position:relative; margin-bottom:34px; opacity:0; transform:translateY(24px);
+            transition:opacity .6s ease, transform .6s ease;
+        }
+        .slot-card.in-view{ opacity:1; transform:translateY(0); }
+        .slot-card::before{
+            content:""; position:absolute; left:-34px; top:6px; width:14px; height:14px; border-radius:50%;
+            background:var(--oak-accent); border:3px solid #fff; box-shadow:0 0 0 2px var(--oak-accent);
+        }
+        .slot-time{
+            font-size:.72rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+            color:var(--oak-accent); margin-bottom:8px; display:block;
+        }
+        .slot-body{
+            background:#fff; border:1px solid #eee; border-radius:14px; overflow:hidden;
+            display:flex; box-shadow:0 8px 24px rgba(0,0,0,0.05); transition:.3s;
+        }
+        .slot-body:hover{ box-shadow:0 16px 34px rgba(0,0,0,0.1); transform:translateY(-3px); }
+        .slot-img{ width:150px; min-width:150px; height:150px; object-fit:cover; }
+        .slot-text{ padding:18px 22px; display:flex; flex-direction:column; justify-content:center; }
+        .slot-text h4{ font-family:'Brygada 1918', serif; font-size:1.15rem; margin-bottom:6px; color:#1c1c1c; }
+        .slot-text p{ font-size:.92rem; color:#666; margin-bottom:10px; line-height:1.6; }
+        .slot-link{
+            font-size:.82rem; font-weight:700; color:var(--oak-navy); text-decoration:none;
+            display:inline-flex; align-items:center; gap:4px;
+        }
+        .slot-link:hover{ color:var(--oak-accent); }
+
+        @media (max-width: 576px){
+            .slot-body{ flex-direction:column; }
+            .slot-img{ width:100%; height:170px; }
+        }
+
+        /* ---------- Food section ---------- */
+        .food-block{
+            background:var(--oak-cream); border-radius:16px; padding:26px 26px 8px; margin-top:6px;
+        }
+        .food-block h5{
+            font-family:'Brygada 1918', serif; font-size:1.05rem; color:var(--oak-navy); margin-bottom:16px;
+            display:flex; align-items:center; gap:8px;
+        }
+        .food-item{ display:flex; gap:14px; margin-bottom:18px; }
+        .food-icon{
+            width:38px; height:38px; min-width:38px; border-radius:50%; background:#fff;
+            display:flex; align-items:center; justify-content:center; color:var(--oak-accent); font-size:1.05rem;
+            box-shadow:0 4px 10px rgba(0,0,0,0.06);
+        }
+        .food-item .meal-tag{
+            font-size:.68rem; text-transform:uppercase; letter-spacing:1px; font-weight:700; color:#aa5b32;
+        }
+        .food-item h6{ font-size:.98rem; margin:2px 0 3px; color:#1c1c1c; }
+        .food-item p{ font-size:.86rem; color:#7a7a7a; margin:0; line-height:1.5; }
+
+        /* ---------- Cuisine grid ---------- */
+        .cuisine-section{ background:var(--oak-navy); padding:80px 0; color:#fff; }
+        .cuisine-section .section-eyebrow{ color:var(--oak-accent); }
+        .cuisine-card{
+            background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
+            border-radius:14px; padding:24px; height:100%; transition:.3s;
+        }
+        .cuisine-card:hover{ background:rgba(255,255,255,0.12); transform:translateY(-4px); }
+        .cuisine-card .dish-icon{
+            width:46px; height:46px; border-radius:50%; background:var(--oak-accent); color:#fff;
+            display:flex; align-items:center; justify-content:center; margin-bottom:14px; font-size:1.2rem;
+        }
+        .cuisine-card h6{ font-family:'Brygada 1918', serif; font-size:1.05rem; margin-bottom:8px; }
+        .cuisine-card p{ font-size:.88rem; color:rgba(255,255,255,0.75); line-height:1.6; margin:0; }
+
+        /* ---------- CTA back to explore ---------- */
+        .itin-cta{ padding:70px 0; text-align:center; }
+        .itin-cta h3{ font-family:'Brygada 1918', serif; font-size:1.8rem; margin-bottom:16px; }
+        .itin-cta .btn-oak{
+            background:var(--oak-navy); color:#fff; padding:12px 32px; border-radius:30px;
+            text-decoration:none; font-weight:600; display:inline-block; transition:.3s;
+        }
+        .itin-cta .btn-oak:hover{ background:var(--oak-accent); }
+
+        .section-eyebrow{
+            text-transform:uppercase; letter-spacing:2.5px; font-size:.78rem; font-weight:700; color:var(--oak-navy);
+            display:block; margin-bottom:8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="itin-loader"><div class="loader-ring"></div><span>Preparing your itinerary</span></div>
+
+    <nav class="site-nav mt-3" style="position:absolute; top:0; width:100%; z-index:60;">
+        <div class="container">
+            <div class="site-navigation">
+                <a href="index.html" class="logo m-0 float-start text-white">Passport</a>
+                <ul class="js-clone-nav d-none d-lg-inline-block text-center site-menu p-0 m-0 float-end">
+                    <li><a href="index.html" class="text-white">Home</a></li>
+                    <li><a href="blog.html" class="text-white">Destinations</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="itin-hero" class="itin-hero">
+        <div class="hero-overlay"></div>
+        <div class="container itin-hero-content">
+            <a href="#" id="back-link" class="back-btn"><span class="fa-solid fa-arrow-left me-2"></span> Back to City</a>
+            <span class="itin-eyebrow" id="dest-eyebrow">Trip Planner</span>
+            <h1 class="itin-title" id="dest-name">Loading...</h1>
+            <p class="itin-tagline" id="dest-duration">Please wait</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row trip-strip g-3" id="trip-strip"></div>
+    </div>
+
+    <div class="day-tabs-wrap">
+        <div class="container">
+            <div class="day-tabs" id="day-tabs"></div>
+        </div>
+    </div>
+
+    <div class="container" id="days-container"></div>
+
+    <div class="cuisine-section">
+        <div class="container">
+            <span class="section-eyebrow">Taste the Destination</span>
+            <h2 class="heading mb-5" style="font-family:'Brygada 1918',serif;">Must-Try Local Cuisine</h2>
+            <div class="row g-4" id="cuisine-grid"></div>
+        </div>
+    </div>
+
+    <div class="itin-cta">
+        <div class="container">
+            <h3>Ready to explore every corner?</h3>
+            <p class="text-muted mb-4">See the full destination guide with history, highlights and travel essentials.</p>
+            <a href="#" id="cta-view-link" class="btn-oak">View Destination Guide</a>
+        </div>
+    </div>
+
+    <div class="site-footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0 text-dark">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Passport</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/itinerary-data.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const params = new URLSearchParams(window.location.search);
+        const destId = params.get("id") || params.get("dest");
+
+        if (typeof travelData === "undefined" || !travelData[destId]) {
+            document.body.innerHTML = "<div class='container mt-5 text-center py-5'><h1>Destination not found.</h1><p><a href='blog.html'>Browse destinations</a></p></div>";
+            return;
+        }
+
+        const cityData = travelData[destId];
+        const itin = (typeof itineraryData !== "undefined") ? itineraryData[destId] : null;
+
+        // Hero
+        document.getElementById("itin-hero").style.backgroundImage = `url('${cityData.heroImage}')`;
+        document.getElementById("dest-name").innerText = cityData.name + " Itinerary";
+        document.getElementById("back-link").href = `view.html?id=${destId}`;
+        document.getElementById("cta-view-link").href = `view.html?id=${destId}`;
+
+        if (!itin) {
+            document.getElementById("dest-duration").innerText = "A detailed day-wise plan for this destination is coming soon.";
+            document.getElementById("days-container").innerHTML = "<div class='text-center py-5'><p>Check back soon for the full itinerary, or explore the places already listed on the destination page.</p></div>";
+            document.getElementById("itin-loader").classList.add("hide");
+            return;
+        }
+
+        document.getElementById("dest-duration").innerText = `${itin.duration} · ${cityData.tagline}`;
+
+        // Trip overview strip
+        const stripIcons = ["fa-regular fa-clock", "fa-regular fa-sun", "fa-solid fa-sack-dollar", "fa-solid fa-users"];
+        const stripData = [
+            { label: "Duration", value: itin.duration },
+            { label: "Best Time", value: itin.bestTime },
+            { label: "Budget", value: itin.budget },
+            { label: "Ideal For", value: itin.idealFor }
+        ];
+        document.getElementById("trip-strip").innerHTML = stripData.map((s, i) => `
+            <div class="col-6 col-md-3 trip-stat">
+                <div class="stat-icon"><span class="${stripIcons[i]}"></span></div>
+                <div class="stat-label">${s.label}</div>
+                <div class="stat-value">${s.value}</div>
+            </div>
+        `).join("");
+
+        // Day tabs
+        const tabsContainer = document.getElementById("day-tabs");
+        tabsContainer.innerHTML = itin.days.map((d, i) => `
+            <button class="day-tab-btn${i === 0 ? " active" : ""}" data-target="day-${d.day}">Day ${d.day}</button>
+        `).join("");
+
+        // Day sections
+        const mealIcon = { "Breakfast": "fa-solid fa-mug-hot", "Lunch": "fa-solid fa-bowl-food", "Dinner": "fa-solid fa-utensils", "Snack": "fa-solid fa-cookie-bite", "Dessert": "fa-solid fa-ice-cream", "Refreshment": "fa-solid fa-glass-water", "Evening": "fa-solid fa-utensils", "Evening Treat": "fa-solid fa-leaf" };
+
+        const daysHTML = itin.days.map(d => {
+            const slotsHTML = d.slots.map(s => {
+                const place = (s.placeIndex !== undefined) ? cityData.places[s.placeIndex] : null;
+                const img = place ? place.img : cityData.heroImage;
+                const name = place ? place.name : d.title;
+                const link = place ? `place.html?dest=${destId}&place=${s.placeIndex}` : null;
+                return `
+                <div class="slot-card">
+                    <span class="slot-time">${s.time}</span>
+                    <div class="slot-body">
+                        <img src="${img}" alt="${name}" class="slot-img" onerror="this.src='images/fallback.jpg'">
+                        <div class="slot-text">
+                            <h4>${name}</h4>
+                            <p>${s.note}</p>
+                            ${link ? `<a href="${link}" class="slot-link">Explore this place <span class="fa-solid fa-chevron-right"></span></a>` : ""}
+                        </div>
+                    </div>
+                </div>`;
+            }).join("");
+
+            const foodHTML = d.food.map(f => `
+                <div class="food-item">
+                    <div class="food-icon"><span class="${mealIcon[f.meal] || 'fa-solid fa-utensils'}"></span></div>
+                    <div>
+                        <span class="meal-tag">${f.meal}</span>
+                        <h6>${f.name}</h6>
+                        <p>${f.desc}</p>
+                    </div>
+                </div>
+            `).join("");
+
+            return `
+            <section class="day-section" id="day-${d.day}">
+                <span class="day-kicker">Day ${d.day}</span>
+                <h2 class="day-heading">${d.title}</h2>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="day-timeline">${slotsHTML}</div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="food-block">
+                            <h5><span class="fa-solid fa-utensils"></span> Where to Eat Today</h5>
+                            ${foodHTML}
+                        </div>
+                    </div>
+                </div>
+            </section>`;
+        }).join("");
+
+        document.getElementById("days-container").innerHTML = daysHTML;
+
+        // Cuisine grid
+        const cuisineIcons = ["fa-solid fa-utensils", "fa-solid fa-pepper-hot", "fa-solid fa-bowl-food", "fa-solid fa-mug-saucer"];
+        document.getElementById("cuisine-grid").innerHTML = (itin.cuisine || []).map((c, i) => `
+            <div class="col-6 col-md-3">
+                <div class="cuisine-card">
+                    <div class="dish-icon"><span class="${cuisineIcons[i % cuisineIcons.length]}"></span></div>
+                    <h6>${c.name}</h6>
+                    <p>${c.desc}</p>
+                </div>
+            </div>
+        `).join("");
+
+        // ---- Sticky tab active state on scroll ----
+        const tabButtons = Array.from(document.querySelectorAll(".day-tab-btn"));
+        const sections = Array.from(document.querySelectorAll(".day-section"));
+
+        tabButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const target = document.getElementById(btn.dataset.target);
+                if (target) {
+                    const y = target.getBoundingClientRect().top + window.pageYOffset - 80;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                }
+            });
+        });
+
+        const spy = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tabButtons.forEach(b => b.classList.remove("active"));
+                    const activeBtn = tabButtons.find(b => b.dataset.target === entry.target.id);
+                    if (activeBtn) {
+                        activeBtn.classList.add("active");
+                        activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+                    }
+                }
+            });
+        }, { rootMargin: "-40% 0px -50% 0px", threshold: 0 });
+        sections.forEach(sec => spy.observe(sec));
+
+        // ---- Fade-in slot cards on scroll ----
+        const reveal = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                    reveal.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll(".slot-card").forEach(el => reveal.observe(el));
+
+        AOS.init({ once: true });
+
+        // Hide loader
+        setTimeout(() => document.getElementById("itin-loader").classList.add("hide"), 350);
+    });
+    </script>
+</body>
+</html>
