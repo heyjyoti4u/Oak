@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Travel News</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; opacity: 0; transition: opacity 0.5s ease; }
+        body.loaded { opacity: 1; }
+
+        .news-hero {
+            height: 55vh;
+            min-height: 360px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            color: #fff;
+        }
+        .news-hero .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(10,20,28,0.95) 0%, rgba(10,20,28,0.55) 55%, rgba(10,20,28,0.15) 100%);
+        }
+        .news-hero-content { position: relative; z-index: 2; padding-bottom: 40px; width: 100%; }
+        .back-btn {
+            color: #fff; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center;
+            margin-bottom: 20px; background: rgba(255,255,255,0.15); backdrop-filter: blur(6px);
+            padding: 9px 22px; border-radius: 30px; transition: 0.3s; border: 1px solid rgba(255,255,255,0.35);
+            font-size: .9rem;
+        }
+        .back-btn:hover { background: #fff; color: #1A374D; }
+        .news-date {
+            text-transform: uppercase; letter-spacing: 2px; font-size: .78rem; color: #f17945;
+            font-weight: 700; margin-bottom: 10px; display: block;
+        }
+        .news-title {
+            font-family: 'Brygada 1918', serif; font-weight: 700; font-size: 2.6rem;
+            text-shadow: 2px 2px 14px rgba(0,0,0,0.45); max-width: 800px;
+        }
+
+        .news-body { max-width: 760px; margin: 0 auto; padding: 60px 20px; }
+        .news-body p { font-size: 1.05rem; line-height: 1.9; color: #444; margin-bottom: 22px; }
+
+        .destination-cta {
+            background: #1A374D; border-radius: 16px; padding: 34px; color: #fff;
+            display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px;
+            margin-top: 20px;
+        }
+        .destination-cta h5 { font-family: 'Brygada 1918', serif; margin-bottom: 6px; }
+        .destination-cta p { color: rgba(255,255,255,0.75); margin: 0; font-size: .92rem; }
+        .destination-cta .cta-links { display: flex; gap: 10px; flex-wrap: wrap; }
+        .destination-cta a.btn-outline {
+            border: 1px solid rgba(255,255,255,0.5); color: #fff; padding: 10px 20px; border-radius: 30px;
+            text-decoration: none; font-size: .88rem; font-weight: 600; transition: 0.3s;
+        }
+        .destination-cta a.btn-outline:hover { background: #fff; color: #1A374D; }
+        .destination-cta a.btn-solid {
+            background: #f17945; color: #fff; padding: 10px 20px; border-radius: 30px;
+            text-decoration: none; font-size: .88rem; font-weight: 600; transition: 0.3s;
+        }
+        .destination-cta a.btn-solid:hover { background: #fff; color: #1A374D; }
+
+        .related-news { padding: 30px 0 70px; }
+        .related-card {
+            display: block; text-decoration: none; color: inherit; border-radius: 14px; overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06); transition: 0.3s; height: 100%;
+        }
+        .related-card:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgba(0,0,0,0.12); }
+        .related-card img { width: 100%; height: 150px; object-fit: cover; }
+        .related-card .rc-body { padding: 14px 16px; }
+        .related-card .rc-body span { font-size: .7rem; text-transform: uppercase; color: #f17945; font-weight: 700; }
+        .related-card .rc-body h6 { font-size: .95rem; margin: 6px 0 0; color: #1c1c1c; line-height: 1.4; }
+    </style>
+</head>
+<body>
+
+    <nav class="site-nav mt-3" style="position:absolute; top:0; width:100%; z-index:60;">
+        <div class="container">
+            <div class="site-navigation">
+                <a href="index.html" class="logo m-0 float-start text-white">Passport</a>
+                <ul class="js-clone-nav d-none d-lg-inline-block text-center site-menu p-0 m-0 float-end">
+                    <li><a href="index.html" class="text-white">Home</a></li>
+                    <li><a href="blog.html" class="text-white">Destinations</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="news-hero" class="news-hero">
+        <div class="hero-overlay"></div>
+        <div class="container news-hero-content">
+            <a href="blog.html" class="back-btn"><span class="fa-solid fa-arrow-left me-2"></span> Back to News</a>
+            <span class="news-date" id="news-date">Loading...</span>
+            <h1 class="news-title" id="news-title"></h1>
+        </div>
+    </div>
+
+    <div class="news-body">
+        <div id="news-content"></div>
+
+        <div class="destination-cta" id="destination-cta">
+        </div>
+    </div>
+
+    <div class="container related-news">
+        <h4 class="mb-4" style="font-family:'Brygada 1918',serif;">More Travel News</h4>
+        <div class="row g-4" id="related-news-row"></div>
+    </div>
+
+    <div class="site-footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0 text-dark">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Passport</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/news-data.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        const newsId = params.get("id");
+
+        if (typeof newsData === "undefined" || !newsId) {
+            document.body.innerHTML = "<div class='container mt-5 text-center py-5'><h1>News article not found.</h1><p><a href='blog.html'>Back to Blog</a></p></div>";
+            document.body.classList.add("loaded");
+            return;
+        }
+
+        const article = newsData.find(n => n.id === newsId);
+
+        if (!article) {
+            document.body.innerHTML = "<div class='container mt-5 text-center py-5'><h1>News article not found.</h1><p><a href='blog.html'>Back to Blog</a></p></div>";
+            document.body.classList.add("loaded");
+            return;
+        }
+
+        // Preload hero image, fall back gracefully if missing
+        const heroImg = new Image();
+        heroImg.onload = () => { document.getElementById("news-hero").style.backgroundImage = `url('${article.image}')`; };
+        heroImg.onerror = () => { document.getElementById("news-hero").style.backgroundImage = `url('images/fallback.jpg')`; };
+        heroImg.src = article.image;
+
+        document.title = article.title + " | Passport";
+        document.getElementById("news-date").innerText = article.date;
+        document.getElementById("news-title").innerText = article.title;
+        document.getElementById("news-content").innerHTML = article.content.map(p => `<p>${p}</p>`).join("");
+
+        // Destination CTA
+        const cityData = (typeof travelData !== "undefined") ? travelData[article.destId] : null;
+        if (cityData) {
+            document.getElementById("destination-cta").innerHTML = `
+                <div>
+                    <h5>Planning a trip to ${cityData.name}?</h5>
+                    <p>Explore the full destination guide and a ready-made day-wise itinerary.</p>
+                </div>
+                <div class="cta-links">
+                    <a href="view.html?id=${article.destId}" class="btn-outline">Destination Guide</a>
+                    <a href="itinerary.html?id=${article.destId}" class="btn-solid">View Itinerary</a>
+                </div>
+            `;
+        } else {
+            document.getElementById("destination-cta").style.display = "none";
+        }
+
+        // Related news (exclude current, show up to 4)
+        const related = newsData.filter(n => n.id !== newsId).slice(0, 4);
+        document.getElementById("related-news-row").innerHTML = related.map(n => `
+            <div class="col-6 col-md-3">
+                <a href="news.html?id=${n.id}" class="related-card">
+                    <img src="${n.image}" alt="${n.title}" onerror="this.src='images/fallback.jpg'">
+                    <div class="rc-body">
+                        <span>${n.date}</span>
+                        <h6>${n.title}</h6>
+                    </div>
+                </a>
+            </div>
+        `).join("");
+
+        AOS.init({ once: true });
+        document.body.classList.add("loaded");
+    });
+    </script>
+</body>
+</html>
