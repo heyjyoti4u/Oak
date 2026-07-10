@@ -170,5 +170,89 @@ const newsData = [
             "Local tour operators report a rise in road-trip travellers making the journey by car, in addition to the usual visitors arriving by flight into Tezpur or Guwahati followed by a road transfer.",
             "As with any high-altitude destination, visitors are encouraged to build in a day for acclimatisation before heading further up toward Bumla Pass."
         ]
+    },
+    {
+        id: "goa-beach-shack-season-2026",
+        destId: "goa",
+        title: "Beach Shacks Reopen Along North Goa as Season Kicks Off",
+        date: "12 April 2026",
+        image: "images/goa.jpg",
+        summary: "Licensed beach shacks have reopened along Baga and Calangute as Goa's tourist season returns to full swing.",
+        content: [
+            "Licensed beach shacks have reopened along Baga and Calangute beaches, marking the start of Goa's peak tourist season after the seasonal licensing process concluded.",
+            "This year's shack policy includes a renewed push for cleaner beaches, with operators required to manage waste disposal more strictly than in previous seasons.",
+            "Live music nights and fire-show evenings are back on the calendar at several of the larger shacks, drawing crowds well past sunset.",
+            "Visitors are advised to book beachfront accommodation early, as the stretch between Baga and Anjuna tends to fill up quickly on weekends during peak months."
+        ]
+    },
+    {
+        id: "udaipur-lake-festival-2026",
+        destId: "udaipur",
+        title: "Udaipur's Lake Palace Hosts Special Evening Boat Concerts",
+        date: "5 April 2026",
+        image: "images/udaipur.jpg",
+        summary: "A new series of evening boat concerts on Lake Pichola has become one of Udaipur's most talked-about additions this season.",
+        content: [
+            "A new series of evening boat concerts on Lake Pichola has quickly become one of the most talked-about additions to Udaipur's cultural calendar this season.",
+            "Musicians perform classical and folk sets aboard slow-moving boats, with the illuminated City Palace and Lake Palace serving as a backdrop for the audience gathered along Ambrai Ghat.",
+            "The concerts are typically held on weekend evenings, and tickets are best arranged through hotels near the lake given the limited seating on each boat.",
+            "Local guides note that the shows pair well with an earlier visit to Bagore Ki Haveli, which hosts its own folk dance performance just before sunset."
+        ]
+    },
+    {
+        id: "rishikesh-yoga-festival-2026",
+        destId: "rishikesh",
+        title: "International Yoga Festival Draws Record Crowds to Rishikesh",
+        date: "28 March 2026",
+        image: "images/rishikesh.jpg",
+        summary: "This year's International Yoga Festival in Rishikesh has drawn one of its largest crowds yet, with sessions held along the Ganga's banks.",
+        content: [
+            "This year's edition of the International Yoga Festival has drawn one of its largest crowds yet, with practitioners from over 60 countries gathering along the banks of the Ganga.",
+            "Sessions range from traditional Hatha and Ashtanga classes to meditation and breathwork workshops, held at ashrams throughout the week-long event.",
+            "Organisers have also expanded the festival's evening programme to include Ganga Aarti ceremonies specifically timed for attendees, drawing large crowds to Parmarth Niketan's riverside ghat.",
+            "Accommodation across Rishikesh's ashrams and budget stays tends to book out well in advance of the festival, so early planning is strongly recommended."
+        ]
+    },
+    {
+        id: "darjeeling-toy-train-2026",
+        destId: "darjeeling",
+        title: "Darjeeling's Heritage Toy Train Adds New Weekend Joy Ride",
+        date: "20 March 2026",
+        image: "images/darjeeling.jpg",
+        summary: "The Darjeeling Himalayan Railway has introduced an additional weekend joy ride service between Darjeeling and Ghoom.",
+        content: [
+            "The Darjeeling Himalayan Railway, a UNESCO World Heritage Site, has introduced an additional weekend joy ride service running between Darjeeling and Ghoom, its highest station.",
+            "The short round trip takes passengers past the famous Batasia Loop and offers close-up views of the steam engine at work, a favourite for rail enthusiasts and families alike.",
+            "Tea estate visits near Ghoom have also seen renewed interest as a result, with several gardens now offering short walking tours timed around the train's schedule.",
+            "Given limited seating on the heritage carriages, travellers are advised to book toy train tickets a few days ahead, especially during the October to December peak season."
+        ]
+    },
+    {
+        id: "manali-paragliding-season-2026",
+        destId: "manali",
+        title: "Solang Valley's Paragliding Season Opens With Favourable Winds",
+        date: "10 March 2026",
+        image: "images/manali.jpg",
+        summary: "Paragliding operators in Solang Valley have confirmed the start of the season, with favourable wind conditions returning to the slopes.",
+        content: [
+            "Paragliding operators in Solang Valley have confirmed the official start of the season, with favourable wind conditions returning after the winter snow began to clear from the launch points.",
+            "Alongside paragliding, the valley's cable car and zorbing activities have also resumed full operations, making it one of the busiest adventure hubs near Manali.",
+            "Local operators note that early morning slots tend to offer the calmest winds and the clearest views across the valley toward Rohtang Pass.",
+            "Visitors are reminded that Rohtang Pass access requires an online permit, which should be arranged a few days before travel given daily vehicle quotas."
+        ]
+    },
+    {
+        id: "andaman-ferry-expansion-2026",
+        destId: "andaman",
+        title: "New Ferry Timings Ease Inter-Island Travel Across Andaman",
+        date: "2 March 2026",
+        image: "images/andaman.jpg",
+        summary: "Additional ferry timings between Port Blair, Havelock, and Neil Island have made multi-island itineraries considerably easier to plan.",
+        content: [
+            "Additional government and private ferry timings between Port Blair, Havelock, and Neil Island have made it noticeably easier to plan a multi-island Andaman itinerary without long waits.",
+            "The extra sailings have particularly benefited day-trippers looking to combine Havelock's Radhanagar Beach with a visit to Neil Island's quieter shores in a single, well-paced trip.",
+            "Dive operators around Havelock report steady demand through the season, with the outer reefs near Elephant Beach remaining a favourite for both beginner and certified divers.",
+            "Given limited daily seats, travellers are advised to book inter-island ferry tickets online in advance, especially during the busier December to January period."
+        ]
     }
 ];
