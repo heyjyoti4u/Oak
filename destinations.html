@@ -1,4 +1,3 @@
- 
 <!doctype html>
 <html lang="en">
 <head>
@@ -26,7 +25,7 @@
 	<link rel="stylesheet" href="css/flatpickr.min.css">
 	<link rel="stylesheet" href="css/glightbox.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 	<title>Destinations</title>
 </head>
@@ -80,345 +79,110 @@
 
 	
 
-	<div class="hero overlay">
 
-		<div class="img-bg rellax">
-			<img src="images/some4.jpg" alt="Image" class="img-fluid">
-		</div>
-		<div class="container">
-			<div class="row align-items-center justify-content-start">
-           <div class="col-lg-5">
-					<h1 class="heading" data-aos="fade-up">Destinations</h1>
-					<p class="mb-5" data-aos="fade-up">Embark on a journey of endless exploration with our website, where hundreds of incredible destinations await you. Whether you're dreaming of serene beaches, bustling cityscapes, or tranquil mountain escapes, we've got something for every traveler.</p>
+    <style>
+        .dest-hero {
+            position: relative;
+            height: 46vh;
+            min-height: 340px;
+            background: url('images/some4.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+        }
+        .dest-hero::before {
+            content: "";
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(10,20,28,0.75), rgba(10,20,28,0.55));
+        }
+        .dest-hero .container { position: relative; z-index: 2; }
+        .dest-hero h1 { color: #fff; }
+        .dest-hero p { color: rgba(255,255,255,0.85); max-width: 620px; }
 
-					<div data-aos="fade-up">
-						<a href="images/ranbir.webm" class="play-button align-items-center d-flex glightbox3" >
-							<span class="icon-button me-3">
-								<span class="icon-play"></span>
-							</span>
-							<span class="caption">Watch Video</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
+        .dest-search-wrap { margin-top: -34px; position: relative; z-index: 5; }
+        .dest-search-box {
+            background: #fff; border-radius: 50px; box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+            padding: 10px 10px 10px 26px; display: flex; align-items: center; gap: 12px;
+        }
+        .dest-search-box input {
+            border: none; outline: none; flex: 1; font-size: 1rem; padding: 10px 0; background: transparent;
+        }
+        .dest-search-box .search-icon { color: #999; font-size: 1.1rem; }
+        .dest-search-box .clear-btn {
+            border: none; background: #f2f2f2; color: #777; border-radius: 50%;
+            width: 32px; height: 32px; display: none; align-items: center; justify-content: center; cursor: pointer;
+        }
+        .dest-search-box .clear-btn.show { display: flex; }
 
-		
-	</div>
+        .result-count { font-size: .9rem; color: #777; margin-top: 14px; }
 
+        .dest-card {
+            border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+            transition: transform .35s ease, box-shadow .35s ease; height: 100%; display: flex; flex-direction: column;
+            opacity: 0; transform: translateY(24px); animation: destFadeIn .6s ease forwards;
+        }
+        @keyframes destFadeIn { to { opacity: 1; transform: translateY(0); } }
+        .dest-card:hover { transform: translateY(-8px); box-shadow: 0 22px 44px rgba(0,0,0,0.16); }
+        .dest-card .dest-img-wrap { position: relative; height: 210px; overflow: hidden; }
+        .dest-card .dest-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+        .dest-card:hover .dest-img-wrap img { transform: scale(1.08); }
+        .dest-card .dest-body { padding: 20px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+        .dest-card h3 { font-family: 'Brygada 1918', serif; font-size: 1.3rem; margin-bottom: 6px; }
+        .dest-card p { color: #777; font-size: .92rem; flex: 1; margin-bottom: 16px; }
+        .dest-card .dest-actions { display: flex; gap: 10px; }
+        .dest-card .btn-view {
+            flex: 1; text-align: center; background: #1A374D; color: #fff; text-decoration: none;
+            padding: 10px 14px; border-radius: 8px; font-size: .85rem; font-weight: 600; transition: .3s;
+        }
+        .dest-card .btn-view:hover { background: #f17945; }
+        .dest-card .btn-itin {
+            flex: 1; text-align: center; border: 1.5px solid #1A374D; color: #1A374D; text-decoration: none;
+            padding: 9px 14px; border-radius: 8px; font-size: .85rem; font-weight: 600; transition: .3s;
+        }
+        .dest-card .btn-itin:hover { background: #1A374D; color: #fff; }
 
+        #no-results { display: none; text-align: center; padding: 60px 20px; color: #999; }
+        #no-results.show { display: block; }
+    </style>
 
-	<div class="section service-section-1">
-		<div class="container">
-			<div class="row">
+    <div class="dest-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <h1 class="heading" data-aos="fade-up">Find Your Next Destination</h1>
+                    <p data-aos="fade-up">Browse every place we cover, search by name, and jump straight into a ready-made day-wise itinerary.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-				<div class="col-lg-3 mb-4 mb-lg-0">
-					<div class="heading-content" data-aos="fade-up">
-						<h2>Our<span class="d-block">Dream</span></h2>
-						<p>Our dream is to inspire and empower travelers like you to explore the world's most breathtaking destinations.</p>
-						<p class="my-4" data-aos="fade-up" data-aos-delay="300"><a href="blog.html" class="btn btn-primary">View All</a></p>
-					</div>
-				</div>
-				<div class="col-lg-9">
-					<div class="row">
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="100">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/01.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Enthusiam</h3>
-									<p>We're passionate about sparking your enthusiasm for travel. Our team of experts curates content that showcases the unique charm and attractions of each destination. </p>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="200">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/02.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Spirited Away</h3>
-									<p>We want to transport you to a world of immersive experiences. Imagine strolling through ancient ruins, sampling local cuisine.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="300">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/03.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Wanderer</h3>
-									<p>  
-										Sometimes, the best memories are created when we wander off the beaten path. Our website will feature hidden gems.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="400">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/04.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Connection</h3>
-									<p>Travel is about connection with people, places, and experiences. Our website aims to foster a community of like-minded travelers </p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+    <div class="container dest-search-wrap">
+        <div class="dest-search-box" data-aos="fade-up">
+            <span class="fa-solid fa-magnifying-glass search-icon"></span>
+            <input type="text" id="dest-search" placeholder="Search destinations — e.g. Jaipur, beaches, mountains, temples...">
+            <button class="clear-btn" id="dest-search-clear" aria-label="Clear search">
+                <span class="fa-solid fa-xmark"></span>
+            </button>
+        </div>
+        <p class="result-count" id="dest-result-count"></p>
+    </div>
 
-			</div>
-		</div>
-	</div>
-
- 
-	<div class="section section-3" data-aos="fade-up" data-aos-delay="100">
-		<div class="container">
-			<div class="row align-items-center justify-content-between  mb-5">
-				<div class="col-lg-5" data-aos="fade-up">
-					<h2 class="heading mb-3">Discover Hundreds of Travel Destinations with us</h2>
-					<p>With hundreds of destinations at your fingertips, your next adventure is just a few clicks away.</p>
-				</div>		
-				<div class="col-lg-5 text-md-end" data-aos="fade-up" data-aos-delay="100">
-					<div id="destination-controls">
-						<span class="prev me-3" data-controls="prev">
-							<span class="icon-chevron-left"></span>
-
-						</span>
-						<span class="next" data-controls="next">
-							<span class="icon-chevron-right"></span>
-
-						</span>
-					</div>
-				</div>
-			</div>	
-
-		</div>		
-		
-		<div class="destination-slider-wrap">
-			<div class="destination-slider">
-				<div class="destination">
-					<div class="thumb">
-						<img src="images/manali.jpg" alt="Image" class="img-fluid">
-				
-					</div>
-					<div class="mt-4">
-						<h3><a href="blog.html">Manali</a></h3>
-						<span class="meta"> Manali is a beautiful hill station in Himachal Pradesh, India, known for its snow-capped mountains, lush valleys, and adventure activities. It's a popular destination for trekking, skiing, and paragliding, as well as a gateway to the scenic Solang Valley and Rohtang Pass. Manali also has cultural spots like Hidimba Devi Temple and Old Manali, making it a perfect blend of nature and heritage.</span>
-					</div>
-				</div>
-
-				<div class="destination">
-					<div class="thumb">
-						<img src="images/goa.jpg" alt="Image" class="img-fluid">
-						
-					</div>
-					<div class="mt-4">
-						<h3><a href="blog.html">Goa</a></h3>
-						<span class="meta">Goa is famous for its stunning beaches, vibrant nightlife, and water sports. From the lively Baga and Calangute beaches to the serene Palolem and Agonda, Goa offers something for everyone. Visitors can enjoy sunbathing, beach shacks, seafood, and parties, making it a top destination for relaxation and adventure.</span>
-					</div>
-				</div>
-             
-				<div class="destination">
-					<div class="thumb">
-						<img src="images/dwarka.jpg" alt="Image" class="img-fluid">
-			 
-					</div>
-					<div class="mt-4">
-						<h3><a href="blog.html">Dwarka</a></h3>
-						<span class="meta">Dwarka, located in Gujarat, is one of the holiest cities in India and a major pilgrimage site. It is believed to be the ancient kingdom of Lord Krishna. The Dwarkadhish Temple, with its stunning architecture, is the main attraction. The city also offers serene beaches like Gomti Ghat and historical sites like Bet Dwarka, making it a blend of spirituality and scenic beauty.</span>
-					</div>
-				</div>
-         
-				<div class="destination">
-					<div class="thumb">
-						<img src="images/puri.jpg" alt="Image" class="img-fluid">
-					 
-					</div>
-					<div class="mt-4">
-						<h3><a href="blog.html">Puri</a></h3>
-						<span class="meta">Puri, located in Odisha, is a famous pilgrimage and beach destination known for the Jagannath Temple, one of the Char Dham sites. The city is also famous for the Rath Yatra, a grand chariot festival. Puri Beach offers a scenic view of the Bay of Bengal, attracting tourists for its golden sands and sunrise views. It’s a perfect mix of spirituality, culture, and coastal beauty.
-
-
-
-
-
-
-
-						</span>
-					</div>
-				</div>
-
-
-				<div class="destination">
-					<div class="thumb">
-						<img src="images/sonmarg.jpg" alt="Image" class="img-fluid">
-						 
-					</div>
-					<div class="mt-4">
-						<h3><a href="blog.html">Sonmarg</a></h3>
-						<span class="meta">Sonmarg, meaning "Meadow of Gold," is a breathtaking hill station in Jammu and Kashmir. Surrounded by snow-capped peaks, lush green meadows, and the Sindh River, it is a paradise for nature lovers and adventure seekers. It serves as a gateway to the Thajiwas Glacier and offers activities like trekking, camping, and river rafting. Sonmarg is a must-visit for those looking to experience Kashmir’s untouched beauty.</span></span>
-					</div>
-				</div>
-				
-					<div class="destination">
-					<div class="thumb">
-						<img src="images/kedarnath.jpg" alt="Image" class="img-fluid">
-						
-					</div>
-					<div class="mt-4">
-						<h3><a href="blog.html">Kedarnath</a></h3>
-						<span class="meta">Kedarnath, nestled in the Garhwal Himalayas of Uttarakhand, is one of the holiest Hindu pilgrimage sites dedicated to Lord Shiva. The Kedarnath Temple, standing at an altitude of 3,583 meters, is a part of the Char Dham Yatra and is surrounded by breathtaking snow-clad peaks. Pilgrims trek through rugged terrain to seek blessings, while adventure seekers admire its stunning natural beauty. The temple remains open only from April to November due to extreme winters.</span>
-					</div>
-				</div>
-
-
-	            <div class="destination">
-					<div class="thumb">
-						<img src="images/badrinath.jpg" alt="Image" class="img-fluid">
-						 
-
-					</div>
-					<div class="mt-4">
-						<h3><a href="blog.html">Badrinath</a></h3>
-						<span class="meta">Badrinath, located in Uttarakhand, is one of the most sacred Hindu pilgrimage sites and a part of the Char Dham Yatra. The Badrinath Temple, dedicated to Lord Vishnu, is surrounded by the majestic Nar and Narayan mountain ranges and the Alaknanda River. Pilgrims visit to seek blessings and experience the spiritual aura. Nearby attractions include Tapt Kund (hot springs) and Mana Village, the last Indian village before Tibet. </span>
-					</div>
-				</div>
-				
-				 <div class="destination">
-					<div class="thumb">
-						<img src="images/trivendrum.jpg" alt="Image" class="img-fluid">
-						 
-					</div>
-					<div class="mt-4">
-						<h3><a href="blog.html">Trivandrum</a></h3>
-						<span class="meta">Thiruvananthapuram (Trivandrum), the capital of Kerala, is known for its rich cultural heritage, serene beaches, and historic temples. It is home to the Padmanabhaswamy Temple, famous for its intricate Dravidian architecture and hidden treasures. Kovalam Beach and Varkala Beach attract visitors with their golden sands and scenic beauty. The city also has museums, palaces, and lush greenery, making it a blend of tradition and modernity.</span>
-					</div>
-				</div>
-				
-				  
-				 
-				
-				  
-				 
-				
-				  
-				
-				  
-				
-				  
-				 
-				
-				 
-				
-				 
-				
-				 
-				
-				
-				<div class="destination">
-					<div class="thumb">
-						<img src="images/dawki.jpg" alt="Image" class="img-fluid">
-						 
-					</div>
-					<div class="mt-4">
-						<h3><a href="blog.html">Dawki: The Floating Boats</a></h3>
-						<span class="meta">The waters of the Umngot River are crystal clear this January, creating the famous illusion of boats floating on air. Travelers spent the long weekend camping by the riverside and boating near the Bangladesh border.</span>
-					</div>
-				</div>
-				
-				
-				<div class="destination">
-					<div class="thumb">
-						<img src="images/root.jpg" alt="Image" class="img-fluid">
-						 
-					</div>
-					<div class="mt-4">
-						<h3><a href="blog.html">Nongriat: Living Root Bridges</a></h3>
-						<span class="meta">Deep in the forests of Cherrapunji, this bio-engineering marvel is drawing adventure lovers. The 3,000-step trek to the Double Decker Living Root Bridge was perfect in the cool, dry winter weather.</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	 
-	<div class="section">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-lg-6 mx-auto text-center">
-					<div class="heading-content" data-aos="fade-up">
-						<h2>Top Fetaured Places</h2>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p class="my-4" data-aos="fade-up" data-aos-delay="300"><a href="blog.html" class="btn btn-primary">View All</a></p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-3">
-					<div class="service-2 left-0 mb-5">
-						<img src="images/trivendrum.jpg" alt="Image" class="img-fluid mb-4 rounded">
-						<div>
-							<h3>Trivendrum</h3>
-							<p>  Kovalam Beach and Varkala Beach attract visitors with their golden sands and scenic beauty. The city also has museums, palaces, and lush greenery, making it a blend of tradition and modernity.</p>
-							<p><a href="blog.html" class="more">Learn More</a></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3">
-					<div class="service-2 left-0 mb-5">
-						<img src="images/kedarnath.jpg" alt="Image" class="img-fluid mb-4 rounded">
-						<div>
-							<h3>Kedarnath</h3>
-							<p>he Kedarnath Temple, standing at an altitude of 3,583 meters, is a part of the Char Dham Yatra and is surrounded by breathtaking snow-clad peaks.</p>
-							<p><a href="blog.html" class="more">Learn More</a></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3">
-					<div class="service-2 left-0 mb-5">
-						<img src="images/badrinath.jpg" alt="Image" class="img-fluid mb-4 rounded">
-						<div>
-							<h3>Badrinath</h3>
-							<p>Badrinath, located in Uttarakhand, is one of the most sacred Hindu pilgrimage sites and a part of the Char Dham Yatra. The Badrinath Temple, dedicated to Lord Vishnu, is surrounded by the majestic Nar and Narayan mountain ranges and the Alaknanda River. </p>
-							<p><a href="blog.html" class="more">Learn More</a></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3">
-					<div class="service-2 left-0 mb-5">
-						<img src="images/sonmarg.jpg" alt="Image" class="img-fluid mb-4 rounded">
-						<div>
-							<h3>Sonmarg</h3>
-							<p>It serves as a gateway to the Thajiwas Glacier and offers activities like trekking, camping, and river rafting. Sonmarg is a must-visit for those looking to experience Kashmir’s untouched beauty.</p>
-							<p><a href="blog.html" class="more">Learn More</a></p>
-						</div>
-					</div>
-				</div>
-
-				 
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-
-
+    <div class="section pt-4">
+        <div class="container">
+            <div class="row g-4" id="dest-grid"></div>
+            <div id="no-results">
+                <span class="fa-solid fa-map-location-dot" style="font-size:2.4rem;"></span>
+                <h4 class="mt-3">No destinations match your search</h4>
+                <p>Try a different city, region, or keyword.</p>
+            </div>
+        </div>
+    </div>
 	<div class="site-footer">
 		<div class="container">
 
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="widget">
-						<h3>About Passport<span class="text-primary">.</span> </h3>
+						<h3>About Oak<span class="text-primary">.</span> </h3>
 						<p> Your journey is our priority. Let's make your travel experience extraordinary!</p>
 					</div> <!-- /.widget -->
 					<div class="widget">
@@ -507,5 +271,76 @@
 		<script src="js/flatpickr.js"></script>
 		<script src="js/glightbox.min.js"></script>
 		<script src="js/custom.js"></script>
+		<script src="js/data.js"></script>
+		<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const grid = document.getElementById("dest-grid");
+			const noResults = document.getElementById("no-results");
+			const resultCount = document.getElementById("dest-result-count");
+			const searchInput = document.getElementById("dest-search");
+			const clearBtn = document.getElementById("dest-search-clear");
+
+			const keys = Object.keys(travelData);
+
+			function cardHTML(key, i) {
+				const d = travelData[key];
+				return `
+				<div class="col-6 col-md-4 col-lg-3 dest-card-col" data-key="${key}" data-name="${d.name.toLowerCase()}" data-tagline="${(d.tagline||'').toLowerCase()}">
+					<div class="dest-card" style="animation-delay:${(i % 8) * 0.06}s">
+						<div class="dest-img-wrap">
+							<img src="${d.heroImage}" alt="${d.name}" onerror="this.src='images/fallback.jpg'">
+						</div>
+						<div class="dest-body">
+							<h3>${d.name}</h3>
+							<p>${d.tagline || ''}</p>
+							<div class="dest-actions">
+								<a href="view.html?id=${key}" class="btn-view">View Guide</a>
+								<a href="itinerary.html?id=${key}" class="btn-itin">Itinerary</a>
+							</div>
+						</div>
+					</div>
+				</div>`;
+			}
+
+			function renderAll() {
+				grid.innerHTML = keys.map((key, i) => cardHTML(key, i)).join("");
+				resultCount.innerText = `Showing all ${keys.length} destinations`;
+			}
+			renderAll();
+
+			function runSearch() {
+				const q = searchInput.value.trim().toLowerCase();
+				clearBtn.classList.toggle("show", q.length > 0);
+
+				if (!q) {
+					document.querySelectorAll(".dest-card-col").forEach(el => el.style.display = "");
+					noResults.classList.remove("show");
+					resultCount.innerText = `Showing all ${keys.length} destinations`;
+					return;
+				}
+
+				let visible = 0;
+				document.querySelectorAll(".dest-card-col").forEach(el => {
+					const match = el.dataset.name.includes(q) || el.dataset.tagline.includes(q);
+					el.style.display = match ? "" : "none";
+					if (match) visible++;
+				});
+
+				resultCount.innerText = visible > 0
+					? `Found ${visible} destination${visible > 1 ? "s" : ""} matching "${searchInput.value}"`
+					: `No results for "${searchInput.value}"`;
+				noResults.classList.toggle("show", visible === 0);
+			}
+
+			searchInput.addEventListener("input", runSearch);
+			clearBtn.addEventListener("click", () => {
+				searchInput.value = "";
+				runSearch();
+				searchInput.focus();
+			});
+
+			AOS.init({ once: true });
+		});
+		</script>
 	</body>
 	</html>
