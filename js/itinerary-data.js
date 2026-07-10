@@ -657,4 +657,333 @@ const itineraryData = {
             { name: "Gatte ki Sabzi", desc: "Gram-flour dumplings in a spiced yogurt curry." }
         ]
     }
+    ,"goa": {
+        duration: "3 Days / 2 Nights",
+        bestTime: "November to February",
+        budget: "₹2,500 – ₹5,000 / day",
+        idealFor: "Beach lovers, nightlife seekers, families",
+        days: [
+            {
+                day: 1,
+                title: "North Goa Beaches",
+                slots: [
+                    { time: "Morning", placeIndex: 2, note: "Explore Fort Aguada and its lighthouse, overlooking the Arabian Sea." },
+                    { time: "Afternoon", placeIndex: 0, note: "Relax at Baga Beach, Goa's liveliest stretch of sand." },
+                    { time: "Evening", placeIndex: 1, note: "Watch the sunset at Calangute Beach before dinner at a beach shack." }
+                ],
+                food: [
+                    { meal: "Lunch", name: "Goan Fish Curry Rice", desc: "A coconut-based curry with fresh catch, the everyday Goan staple." },
+                    { meal: "Dinner", name: "Prawn Balchão", desc: "A tangy, spicy Goan-Portuguese prawn pickle-curry, best with sausage pao." }
+                ]
+            },
+            {
+                day: 2,
+                title: "Old Goa & Markets",
+                slots: [
+                    { time: "Morning", placeIndex: 3, note: "Visit the Basilica of Bom Jesus, home to the relics of St. Francis Xavier." },
+                    { time: "Afternoon", placeIndex: 4, note: "See the Se Cathedral, one of the largest churches in Asia." },
+                    { time: "Evening", placeIndex: 5, note: "Browse the Anjuna Flea Market for beachwear, jewellery and souvenirs." }
+                ],
+                food: [
+                    { meal: "Breakfast", name: "Goan Sausage Pao", desc: "Spiced pork sausages in a soft local bread roll." },
+                    { meal: "Dinner", name: "Bebinca", desc: "A layered Goan-Portuguese dessert, rich and slow-baked." }
+                ]
+            },
+            {
+                day: 3,
+                title: "Waterfalls & South Goa",
+                slots: [
+                    { time: "Morning", placeIndex: 6, note: "Take a jeep safari to Dudhsagar Falls, one of India's tallest waterfalls." },
+                    { time: "Afternoon", placeIndex: 7, note: "Explore Chapora Fort, famous from Bollywood and its river views." }
+                ],
+                food: [
+                    { meal: "Lunch", name: "Xacuti", desc: "A richly spiced coconut-based curry with roasted spices." },
+                    { meal: "Dinner", name: "Feni & Seafood Platter", desc: "A farewell spread of grilled seafood paired with Goa's local cashew spirit." }
+                ]
+            }
+        ],
+        cuisine: [
+            { name: "Goan Fish Curry Rice", desc: "Coconut-based curry with the day's catch, eaten with rice." },
+            { name: "Prawn Balchão", desc: "A tangy, spicy Goan-Portuguese pickle-style prawn curry." },
+            { name: "Bebinca", desc: "A rich, layered Goan-Portuguese dessert." },
+            { name: "Sausage Pao", desc: "Spiced Goan pork sausage in a soft bread roll." }
+        ]
+    },
+
+    "udaipur": {
+        duration: "3 Days / 2 Nights",
+        bestTime: "September to March",
+        budget: "₹3,000 – ₹6,000 / day",
+        idealFor: "Honeymooners, heritage lovers, photographers",
+        days: [
+            {
+                day: 1,
+                title: "Palaces & The Lake",
+                slots: [
+                    { time: "Morning", placeIndex: 0, note: "Explore the City Palace, a sprawling complex of courtyards and museums." },
+                    { time: "Afternoon", placeIndex: 1, note: "Take a boat ride on Lake Pichola, past the floating Lake Palace." },
+                    { time: "Evening", placeIndex: 2, note: "Visit Jag Mandir island for sunset views over the water." }
+                ],
+                food: [
+                    { meal: "Lunch", name: "Dal Baati Churma", desc: "The Rajasthani classic, best enjoyed lakeside in Udaipur." },
+                    { meal: "Dinner", name: "Gatte ki Sabzi", desc: "Gram-flour dumplings in a spiced yogurt curry." }
+                ]
+            },
+            {
+                day: 2,
+                title: "Gardens & Old City",
+                slots: [
+                    { time: "Morning", placeIndex: 3, note: "Wander Saheliyon Ki Bari, a garden built for the queen's attendants." },
+                    { time: "Afternoon", placeIndex: 5, note: "Visit the ornate Jagdish Temple in the heart of the old city." },
+                    { time: "Evening", placeIndex: 6, note: "Catch a folk dance show at Bagore Ki Haveli on the Ambrai Ghat waterfront." }
+                ],
+                food: [
+                    { meal: "Breakfast", name: "Kachori with Chai", desc: "A simple, satisfying start from one of the old city's tea stalls." },
+                    { meal: "Dinner", name: "Laal Maas", desc: "A fiery Rajasthani mutton curry with red chillies." }
+                ]
+            },
+            {
+                day: 3,
+                title: "Viewpoints & Craft Villages",
+                slots: [
+                    { time: "Morning", placeIndex: 7, note: "Drive up to Sajjangarh, the Monsoon Palace, for a panoramic city view." },
+                    { time: "Afternoon", placeIndex: 4, note: "Relax by Fateh Sagar Lake before heading to the airport or station." }
+                ],
+                food: [
+                    { meal: "Lunch", name: "Ker Sangri", desc: "A tangy desert-bean dish, a Rajasthani specialty." },
+                    { meal: "Dessert", name: "Ghewar", desc: "A syrup-soaked, lattice-textured sweet to end the trip." }
+                ]
+            }
+        ],
+        cuisine: [
+            { name: "Dal Baati Churma", desc: "Baked wheat rolls with lentils and sweet crumble." },
+            { name: "Gatte ki Sabzi", desc: "Gram-flour dumplings in spiced yogurt gravy." },
+            { name: "Laal Maas", desc: "A fiery red mutton curry, a Rajasthani classic." },
+            { name: "Ghewar", desc: "A festive, syrup-soaked lattice sweet." }
+        ]
+    },
+
+    "rishikesh": {
+        duration: "3 Days / 2 Nights",
+        bestTime: "September to April",
+        budget: "₹1,500 – ₹3,500 / day",
+        idealFor: "Yoga practitioners, adventure seekers, backpackers",
+        days: [
+            {
+                day: 1,
+                title: "Ghats & Ashrams",
+                slots: [
+                    { time: "Morning", placeIndex: 2, note: "Begin at Triveni Ghat, the spiritual centre of Rishikesh." },
+                    { time: "Afternoon", placeIndex: 3, note: "Visit the abandoned Beatles Ashram, now covered in colourful graffiti." },
+                    { time: "Evening", placeIndex: 11, note: "Join the evening Ganga Aarti at the riverside ghats." }
+                ],
+                food: [
+                    { meal: "Lunch", name: "Sattvic Thali", desc: "A simple vegetarian meal, common across the town's ashram cafés." },
+                    { meal: "Dinner", name: "Herbal Chai", desc: "Locally blended herbal tea, a Rishikesh café staple." }
+                ]
+            },
+            {
+                day: 2,
+                title: "Bridges & Adventure",
+                slots: [
+                    { time: "Morning", placeIndex: 0, note: "Walk across Laxman Jhula for views of the Ganga below." },
+                    { time: "Afternoon", placeIndex: 7, note: "Head to Shivpuri for a white-water rafting session down the Ganga." },
+                    { time: "Evening", placeIndex: 1, note: "Cross Ram Jhula and explore the cafés lining the riverbank." }
+                ],
+                food: [
+                    { meal: "Breakfast", name: "Stuffed Paratha", desc: "A hearty, filling start before a day of rafting." },
+                    { meal: "Dinner", name: "German Bakery Treats", desc: "Rishikesh's famous bakery cafés serve everything from pasta to pastries." }
+                ]
+            },
+            {
+                day: 3,
+                title: "Temples & Waterfalls",
+                slots: [
+                    { time: "Morning", placeIndex: 4, note: "Visit Neelkanth Mahadev Temple, nestled in the forested hills above town." },
+                    { time: "Afternoon", placeIndex: 10, note: "Trek to Neer Garh Waterfall for a refreshing dip before departure." }
+                ],
+                food: [
+                    { meal: "Lunch", name: "Rajma Chawal", desc: "Kidney beans and rice, simple mountain comfort food." },
+                    { meal: "Snack", name: "Fresh Fruit Lassi", desc: "A cooling farewell drink from a riverside café." }
+                ]
+            }
+        ],
+        cuisine: [
+            { name: "Sattvic Thali", desc: "A simple, pure-vegetarian meal common across ashram cafés." },
+            { name: "Herbal Chai", desc: "Locally blended herbal tea, a town staple." },
+            { name: "Stuffed Paratha", desc: "A filling flatbread, popular with rafting groups." },
+            { name: "Fruit Lassi", desc: "A cooling yogurt drink from the riverside cafés." }
+        ]
+    },
+
+    "darjeeling": {
+        duration: "3 Days / 2 Nights",
+        bestTime: "March to May, October to December",
+        budget: "₹2,500 – ₹4,500 / day",
+        idealFor: "Tea lovers, honeymooners, nature photographers",
+        days: [
+            {
+                day: 1,
+                title: "Sunrise & The Toy Train",
+                slots: [
+                    { time: "Morning", placeIndex: 0, note: "Rise early for the famous sunrise over Kanchenjunga from Tiger Hill." },
+                    { time: "Afternoon", placeIndex: 2, note: "Ride the UNESCO-listed Darjeeling Himalayan Railway, the 'Toy Train'." },
+                    { time: "Evening", placeIndex: 1, note: "Stop at Batasia Loop for one last mountain view before sunset." }
+                ],
+                food: [
+                    { meal: "Breakfast", name: "Momos & Darjeeling Tea", desc: "Steamed dumplings paired with a freshly brewed cup of the region's famous tea." },
+                    { meal: "Dinner", name: "Thukpa", desc: "A warming noodle soup, ideal for the hill-station chill." }
+                ]
+            },
+            {
+                day: 2,
+                title: "Tea Gardens & Monasteries",
+                slots: [
+                    { time: "Morning", placeIndex: 5, note: "Tour the Happy Valley Tea Estate and learn how the leaf becomes the cup." },
+                    { time: "Afternoon", placeIndex: 6, note: "Visit Ghoom Monastery, one of the oldest Buddhist monasteries in the region." },
+                    { time: "Evening", placeIndex: 7, note: "Take the Darjeeling Ropeway for aerial views over the tea gardens." }
+                ],
+                food: [
+                    { meal: "Lunch", name: "Sael Roti with Achar", desc: "A crispy rice-flour ring bread served with tangy pickle." },
+                    { meal: "Dinner", name: "Churpi Soup", desc: "A hearty soup made with fermented Himalayan cheese." }
+                ]
+            },
+            {
+                day: 3,
+                title: "Parks & Mall Road",
+                slots: [
+                    { time: "Morning", placeIndex: 4, note: "Visit Padmaja Naidu Zoological Park to see the Red Panda conservation programme." },
+                    { time: "Afternoon", placeIndex: 11, note: "Stroll Chowrasta Mall Road for souvenirs, tea shops and mountain views." }
+                ],
+                food: [
+                    { meal: "Snack", name: "Darjeeling Tea Tasting", desc: "A guided tasting of first-flush and second-flush estate teas." },
+                    { meal: "Dinner", name: "Gundruk Soup", desc: "A fermented leafy-green soup, a Himalayan specialty." }
+                ]
+            }
+        ],
+        cuisine: [
+            { name: "Momos", desc: "Steamed dumplings, the region's most iconic snack." },
+            { name: "Thukpa", desc: "A noodle soup loaded with vegetables and warmth." },
+            { name: "Darjeeling Tea", desc: "The world-famous estate tea, best tasted fresh at the source." },
+            { name: "Churpi Soup", desc: "A hearty soup made with fermented Himalayan cheese." }
+        ]
+    },
+
+    "manali": {
+        duration: "3 Days / 2 Nights",
+        bestTime: "March to June, October to February",
+        budget: "₹2,500 – ₹5,000 / day",
+        idealFor: "Adventure seekers, honeymooners, road-trippers",
+        days: [
+            {
+                day: 1,
+                title: "Old Manali & Temples",
+                slots: [
+                    { time: "Morning", placeIndex: 2, note: "Visit the wooden Hadimba Temple, set deep in a cedar forest." },
+                    { time: "Afternoon", placeIndex: 3, note: "Wander Old Manali's cafés and lanes along the Beas River." },
+                    { time: "Evening", placeIndex: 4, note: "Soak in the natural hot springs at Vashisht." }
+                ],
+                food: [
+                    { meal: "Lunch", name: "Himachali Dham", desc: "A traditional festive thali of lentils, rice and local vegetables." },
+                    { meal: "Dinner", name: "Israeli-Style Cafe Food", desc: "Old Manali's café scene serves a distinctive backpacker-favourite menu." }
+                ]
+            },
+            {
+                day: 2,
+                title: "Snow & Adventure",
+                slots: [
+                    { time: "Morning", placeIndex: 0, note: "Head to Solang Valley for paragliding, zorbing or skiing depending on season." },
+                    { time: "Afternoon", placeIndex: 1, note: "Continue to Rohtang Pass for high-altitude snow views (permit required)." },
+                    { time: "Evening", note: "Return to Manali for a bonfire evening at your stay." }
+                ],
+                food: [
+                    { meal: "Breakfast", name: "Siddu with Ghee", desc: "A steamed wheat bread stuffed with walnuts or poppy seeds." },
+                    { meal: "Dinner", name: "Trout Fish Fry", desc: "Freshly caught Himalayan trout, a Kullu Valley specialty." }
+                ]
+            },
+            {
+                day: 3,
+                title: "Waterfalls & Valley Views",
+                slots: [
+                    { time: "Morning", placeIndex: 6, note: "Trek to Jogini Falls, a scenic walk through pine forest." },
+                    { time: "Afternoon", placeIndex: 8, note: "Visit Naggar Castle, a 16th-century palace turned heritage hotel." }
+                ],
+                food: [
+                    { meal: "Lunch", name: "Chana Madra", desc: "Chickpeas cooked in a rich yogurt gravy, a Himachali specialty." },
+                    { meal: "Dessert", name: "Fresh Apple Treats", desc: "Locally grown apples, often turned into pies or fresh juice." }
+                ]
+            }
+        ],
+        cuisine: [
+            { name: "Himachali Dham", desc: "A traditional festive thali of lentils, rice and vegetables." },
+            { name: "Siddu", desc: "Steamed wheat bread stuffed with walnut or poppy seed filling." },
+            { name: "Trout Fish Fry", desc: "Freshly caught Himalayan trout from the Kullu Valley." },
+            { name: "Chana Madra", desc: "Chickpeas in a rich, spiced yogurt gravy." }
+        ]
+    },
+
+    "andaman": {
+        duration: "4 Days / 3 Nights",
+        bestTime: "October to May",
+        budget: "₹4,000 – ₹8,000 / day",
+        idealFor: "Divers, honeymooners, island explorers",
+        days: [
+            {
+                day: 1,
+                title: "Port Blair History",
+                slots: [
+                    { time: "Morning", placeIndex: 1, note: "Visit the Cellular Jail, a sobering monument to India's freedom struggle." },
+                    { time: "Afternoon", placeIndex: 2, note: "Take a ferry to Ross Island to see its overgrown colonial ruins." },
+                    { time: "Evening", note: "Watch the Light & Sound Show at the Cellular Jail after sunset." }
+                ],
+                food: [
+                    { meal: "Lunch", name: "Fish Curry with Rice", desc: "Fresh catch cooked in a coconut-based curry, an island staple." },
+                    { meal: "Dinner", name: "Andaman Prawn Fry", desc: "Locally caught prawns pan-fried with island spices." }
+                ]
+            },
+            {
+                day: 2,
+                title: "Havelock Island",
+                slots: [
+                    { time: "Morning", placeIndex: 3, note: "Take the ferry to Havelock Island and settle in by the coast." },
+                    { time: "Afternoon", placeIndex: 0, note: "Spend the afternoon at Radhanagar Beach, rated among Asia's best." },
+                    { time: "Evening", note: "Watch the sunset from the beach with a bonfire dinner nearby." }
+                ],
+                food: [
+                    { meal: "Breakfast", name: "Coconut Pancakes", desc: "A tropical island breakfast, light and fresh." },
+                    { meal: "Dinner", name: "Grilled Reef Fish", desc: "The day's catch, grilled simply with local spices." }
+                ]
+            },
+            {
+                day: 3,
+                title: "Diving & Neil Island",
+                slots: [
+                    { time: "Morning", placeIndex: 5, note: "Snorkel or scuba dive at Elephant Beach's coral reefs." },
+                    { time: "Afternoon", placeIndex: 4, note: "Ferry over to Neil Island for its quieter, laid-back beaches." },
+                    { time: "Evening", note: "Cycle around Neil Island as the light softens over the lagoons." }
+                ],
+                food: [
+                    { meal: "Lunch", name: "Crab Masala", desc: "Fresh crab in a spiced, tangy island-style gravy." },
+                    { meal: "Dinner", name: "Tender Coconut Water", desc: "The islands' everyday refresher, straight from the shell." }
+                ]
+            },
+            {
+                day: 4,
+                title: "Nature & Departure",
+                slots: [
+                    { time: "Morning", placeIndex: 6, note: "Visit Chidiya Tapu for birdwatching and a final scenic sunset point before heading to the airport." }
+                ],
+                food: [
+                    { meal: "Breakfast", name: "Farewell Seafood Platter", desc: "One last taste of the islands before departure." }
+                ]
+            }
+        ],
+        cuisine: [
+            { name: "Fish Curry with Rice", desc: "A coconut-based curry made with the day's fresh catch." },
+            { name: "Crab Masala", desc: "Fresh crab in a spiced, tangy island-style gravy." },
+            { name: "Grilled Reef Fish", desc: "Simply grilled fish with local spice rubs." },
+            { name: "Tender Coconut Water", desc: "The islands' natural, everyday refresher." }
+        ]
+    }
+
 };
