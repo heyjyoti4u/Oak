@@ -114,14 +114,40 @@
 <amp-auto-ads type="adsense"
         data-ad-client="ca-pub-4666867149127695">
 </amp-auto-ads>
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
     <nav class="site-nav mt-3">
         <div class="container">
             <div class="site-navigation">
-                <a href="index.html" class="logo m-0 float-start">Passport</a>
-                <ul class="js-clone-nav d-none d-lg-inline-block text-center site-menu p-0 m-0 float-end">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="blog.html">Back to Blogs</a></li>
-                </ul>
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+                        <a href="index.html" class="logo m-0 float-start">Oak</a>
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
+                        <ul class="js-clone-nav text-center site-menu p-0 m-0">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active"><a href="destinations.html">Destinations</a></li>
+                            <li><a href="blog.html">Blogs</a></li>
+                            <li><a href="about.html">About us</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-3 text-lg-end">
+                        <ul class="js-clone-nav d-none d-lg-inline-block text-end site-menu">
+                            <li class="cta-button"><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                        <a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -172,6 +198,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4666867149127695"
       crossorigin="anonymous"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/navbar.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/custom.js"></script>
     
