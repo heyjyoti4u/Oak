@@ -360,4 +360,190 @@ Amitabh Bachchan, the brand ambassador of Gujarat Tourism, famously says in his 
             { name: "Amar Sagar", img: "images/jaisalmer.jpg" }
         ]
     }
+    ,"goa": {
+        name: "Goa",
+        tagline: "Sun, Sand & Portuguese Charm",
+        heroImage: "images/goa.jpg",
+        events: [
+            { title: "Sunburn Festival", date: "28th Dec", img: "images/goa-event1.jpg" },
+            { title: "Goa Carnival", date: "Feb", img: "images/goa-event2.jpg" },
+            { title: "Christmas Beach Party", date: "25th Dec", img: "images/goa-event3.jpg" },
+            { title: "Saturday Night Market", date: "Every Saturday", img: "images/goa-event4.jpg" },
+            { title: "Feast of St. Francis Xavier", date: "3rd Dec", img: "images/goa-event5.jpg" }
+        ],
+        story: {
+            heading: "Where the Tide Never Stops",
+            content: "Goa is India's smallest state but its biggest party. Portuguese-era churches sit a short drive from beach shacks blasting trance music, while spice-scented villages in the interior move at an entirely different pace. It is a coastline of many moods — quiet at dawn, electric by midnight."
+        },
+        places: [
+            { name: "Baga Beach", img: "images/goa-1.jpg" },
+            { name: "Calangute Beach", img: "images/goa-2.jpg" },
+            { name: "Fort Aguada", img: "images/goa-3.jpg" },
+            { name: "Basilica of Bom Jesus", img: "images/goa-4.jpg" },
+            { name: "Se Cathedral", img: "images/goa-5.jpg" },
+            { name: "Anjuna Flea Market", img: "images/goa-6.jpg" },
+            { name: "Dudhsagar Falls", img: "images/goa-7.jpg" },
+            { name: "Chapora Fort", img: "images/goa-8.jpg" },
+            { name: "Palolem Beach", img: "images/goa.jpg" },
+            { name: "Old Goa Churches", img: "images/goa.jpg" },
+            { name: "Spice Plantation", img: "images/goa.jpg" },
+            { name: "Fontainhas Latin Quarter", img: "images/goa.jpg" }
+        ]
+    },
+
+    "udaipur": {
+        name: "Udaipur",
+        tagline: "The City of Lakes",
+        heroImage: "images/udaipur.jpg",
+        events: [
+            { title: "Mewar Festival", date: "March", img: "images/udaipur-event1.jpg" },
+            { title: "World Music Festival", date: "Feb", img: "images/udaipur-event2.jpg" },
+            { title: "Shilpgram Utsav", date: "Dec", img: "images/udaipur-event3.jpg" },
+            { title: "Lake Palace Boat Nights", date: "Weekends", img: "images/udaipur-event4.jpg" },
+            { title: "Holi Celebrations", date: "March", img: "images/udaipur-event5.jpg" }
+        ],
+        story: {
+            heading: "A Reflection in Water",
+            content: "Udaipur was built around its lakes, and it shows — every palace, ghat and haveli seems designed to be seen from the water. The City Palace rises above Lake Pichola like something from a folk tale, and the whole town still feels closer to its Rajput past than most of Rajasthan's other cities."
+        },
+        places: [
+            { name: "City Palace", img: "images/udaipur-1.jpg" },
+            { name: "Lake Pichola", img: "images/udaipur-2.jpg" },
+            { name: "Jag Mandir", img: "images/udaipur-3.jpg" },
+            { name: "Saheliyon Ki Bari", img: "images/udaipur-4.jpg" },
+            { name: "Fateh Sagar Lake", img: "images/udaipur-5.jpg" },
+            { name: "Jagdish Temple", img: "images/udaipur-6.jpg" },
+            { name: "Bagore Ki Haveli", img: "images/udaipur-7.jpg" },
+            { name: "Sajjangarh Monsoon Palace", img: "images/udaipur-8.jpg" },
+            { name: "Vintage Car Museum", img: "images/udaipur.jpg" },
+            { name: "Ambrai Ghat", img: "images/udaipur.jpg" },
+            { name: "Shilpgram", img: "images/udaipur.jpg" },
+            { name: "Eklingji Temple", img: "images/udaipur.jpg" }
+        ]
+    },
+
+    "rishikesh": {
+        name: "Rishikesh",
+        tagline: "Yoga Capital of the World",
+        heroImage: "images/rishikesh.jpg",
+        events: [
+            { title: "International Yoga Festival", date: "March", img: "images/rishikesh-event1.jpg" },
+            { title: "Ganga Aarti", date: "Daily, Sunset", img: "images/rishikesh-event2.jpg" },
+            { title: "Rafting Season Opening", date: "Sept", img: "images/rishikesh-event3.jpg" },
+            { title: "Kumbh Mela", date: "Periodic", img: "images/rishikesh-event4.jpg" },
+            { title: "Adventure Sports Festival", date: "Oct", img: "images/rishikesh-event5.jpg" }
+        ],
+        story: {
+            heading: "Between the Ganga and the Himalayas",
+            content: "Rishikesh sits where the Ganga rushes down from the mountains, and the town has grown up entirely around that fact. Ashrams and yoga schools line the riverbanks alongside rafting outfitters and cafés, making it a rare place where spiritual retreat and adrenaline sit comfortably side by side."
+        },
+        places: [
+            { name: "Laxman Jhula", img: "images/rishikesh-1.jpg" },
+            { name: "Ram Jhula", img: "images/rishikesh-2.jpg" },
+            { name: "Triveni Ghat", img: "images/rishikesh-3.jpg" },
+            { name: "Beatles Ashram", img: "images/rishikesh-4.jpg" },
+            { name: "Neelkanth Mahadev Temple", img: "images/rishikesh-5.jpg" },
+            { name: "Parmarth Niketan", img: "images/rishikesh-6.jpg" },
+            { name: "Rajaji National Park", img: "images/rishikesh-7.jpg" },
+            { name: "Shivpuri", img: "images/rishikesh-8.jpg" },
+            { name: "Kaudiyala", img: "images/rishikesh.jpg" },
+            { name: "Vashisht Cave", img: "images/rishikesh.jpg" },
+            { name: "Neer Garh Waterfall", img: "images/rishikesh.jpg" },
+            { name: "Ganga Aarti Ghat", img: "images/rishikesh.jpg" }
+        ]
+    },
+
+    "darjeeling": {
+        name: "Darjeeling",
+        tagline: "Queen of the Hills",
+        heroImage: "images/darjeeling.jpg",
+        events: [
+            { title: "Tea Tourism Festival", date: "Nov", img: "images/darjeeling-event1.jpg" },
+            { title: "Darjeeling Carnival", date: "Dec", img: "images/darjeeling-event2.jpg" },
+            { title: "Losar (Tibetan New Year)", date: "Feb", img: "images/darjeeling-event3.jpg" },
+            { title: "Toy Train Heritage Run", date: "Weekends", img: "images/darjeeling-event4.jpg" },
+            { title: "Monastery Festivals", date: "Various", img: "images/darjeeling-event5.jpg" }
+        ],
+        story: {
+            heading: "Mist, Tea and the Toy Train",
+            content: "Darjeeling built its name on tea, and the terraced gardens still ring the town on every side. Add a colonial-era toy train that climbs through the clouds, prayer flags fluttering over Buddhist monasteries, and the promise of a Kanchenjunga sunrise, and it's easy to see why the hills have kept their old nickname."
+        },
+        places: [
+            { name: "Tiger Hill", img: "images/darjeeling-1.jpg" },
+            { name: "Batasia Loop", img: "images/darjeeling-2.jpg" },
+            { name: "Darjeeling Toy Train", img: "images/darjeeling-3.jpg" },
+            { name: "Peace Pagoda", img: "images/darjeeling-4.jpg" },
+            { name: "Padmaja Naidu Zoological Park", img: "images/darjeeling-5.jpg" },
+            { name: "Happy Valley Tea Estate", img: "images/darjeeling-6.jpg" },
+            { name: "Ghoom Monastery", img: "images/darjeeling-7.jpg" },
+            { name: "Darjeeling Ropeway", img: "images/darjeeling-8.jpg" },
+            { name: "Japanese Peace Temple", img: "images/darjeeling.jpg" },
+            { name: "Singalila National Park", img: "images/darjeeling.jpg" },
+            { name: "Rock Garden", img: "images/darjeeling.jpg" },
+            { name: "Chowrasta Mall Road", img: "images/darjeeling.jpg" }
+        ]
+    },
+
+    "manali": {
+        name: "Manali",
+        tagline: "Valley of the Gods",
+        heroImage: "images/manali.jpg",
+        events: [
+            { title: "Winter Carnival", date: "Jan", img: "images/manali-event1.jpg" },
+            { title: "Hadimba Devi Fair", date: "May", img: "images/manali-event2.jpg" },
+            { title: "Kullu Dussehra", date: "Oct", img: "images/manali-event3.jpg" },
+            { title: "Paragliding Season", date: "March-June", img: "images/manali-event4.jpg" },
+            { title: "Apple Blossom Season", date: "April", img: "images/manali-event5.jpg" }
+        ],
+        story: {
+            heading: "Where the Beas Begins",
+            content: "Manali marks the point where the Kullu Valley's orchards give way to high Himalayan passes. Old Manali's cafés and backpacker lanes sit a world apart from the deodar forests and glacier-fed streams just outside town, and the road onward — toward Rohtang and Spiti — is reason enough for most people to visit."
+        },
+        places: [
+            { name: "Solang Valley", img: "images/manali-1.jpg" },
+            { name: "Rohtang Pass", img: "images/manali-2.jpg" },
+            { name: "Hadimba Temple", img: "images/manali-3.jpg" },
+            { name: "Old Manali", img: "images/manali-4.jpg" },
+            { name: "Vashisht Hot Springs", img: "images/manali-5.jpg" },
+            { name: "Manu Temple", img: "images/manali-6.jpg" },
+            { name: "Jogini Falls", img: "images/manali-7.jpg" },
+            { name: "Beas Kund", img: "images/manali-8.jpg" },
+            { name: "Naggar Castle", img: "images/manali.jpg" },
+            { name: "Great Himalayan National Park", img: "images/manali.jpg" },
+            { name: "Manikaran", img: "images/manali.jpg" },
+            { name: "Kasol", img: "images/manali.jpg" }
+        ]
+    },
+
+    "andaman": {
+        name: "Andaman Islands",
+        tagline: "Emerald Isles of the Bay of Bengal",
+        heroImage: "images/andaman.jpg",
+        events: [
+            { title: "Island Tourism Festival", date: "Jan", img: "images/andaman-event1.jpg" },
+            { title: "Cellular Jail Light & Sound Show", date: "Daily, Evening", img: "images/andaman-event2.jpg" },
+            { title: "Beach Marathon", date: "Feb", img: "images/andaman-event3.jpg" },
+            { title: "Water Sports Festival", date: "Oct", img: "images/andaman-event4.jpg" },
+            { title: "Independence Day at Cellular Jail", date: "15th Aug", img: "images/andaman-event5.jpg" }
+        ],
+        story: {
+            heading: "India's Tropical Frontier",
+            content: "The Andaman Islands feel like a different country entirely — turquoise water, coral reefs, and rainforest-covered islands scattered across the Bay of Bengal. Port Blair's colonial Cellular Jail is a sobering counterpoint to the postcard beaches of Havelock and Neil Island just a ferry ride away."
+        },
+        places: [
+            { name: "Radhanagar Beach", img: "images/andaman-1.jpg" },
+            { name: "Cellular Jail", img: "images/andaman-2.jpg" },
+            { name: "Ross Island", img: "images/andaman-3.jpg" },
+            { name: "Havelock Island", img: "images/andaman-4.jpg" },
+            { name: "Neil Island", img: "images/andaman-5.jpg" },
+            { name: "Elephant Beach", img: "images/andaman-6.jpg" },
+            { name: "Chidiya Tapu", img: "images/andaman-7.jpg" },
+            { name: "Baratang Limestone Caves", img: "images/andaman-8.jpg" },
+            { name: "North Bay Island", img: "images/andaman.jpg" },
+            { name: "Corbyn's Cove Beach", img: "images/andaman.jpg" },
+            { name: "Mahatma Gandhi Marine Park", img: "images/andaman.jpg" },
+            { name: "Viper Island", img: "images/andaman.jpg" }
+        ]
+    }
+
 };
