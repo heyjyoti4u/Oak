@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/flatpickr.min.css">
     <link rel="stylesheet" href="css/glightbox.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
     <title>Blogs - Passport</title>
@@ -78,7 +79,7 @@
             <div class="site-navigation">
                 <div class="row">
                     <div class="col-6 col-lg-3">
-                        <a href="index.html" class="logo m-0 float-start">Passport</a>
+                        <a href="index.html" class="logo m-0 float-start">Oak</a>
                     </div>
                     <div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
                         <ul class="js-clone-nav  text-center site-menu p-0 m-0">
@@ -118,7 +119,7 @@
          
 
                     <h1 class="heading" data-aos="fade-up">Travel Diaries</h1>
-                    <p class="mb-5" data-aos="fade-up">Catch up on the latest from the Republic Day long weekend! From the snowy peaks of Auli to the vibrant parades of Delhi, here is where everyone is traveling this January.</p>
+                    <p class="mb-5" data-aos="fade-up">The latest travel news, festival updates, and on-ground stories from every destination we cover — updated as it happens.</p>
 
                     <div data-aos="fade-up">
                         <a href="images/india.mp4" class="play-button align-items-center d-flex glightbox3" >
@@ -133,60 +134,46 @@
         </div>
     </div>
 
+    <style>
+        .news-search-wrap { margin-top: -30px; position: relative; z-index: 5; }
+        .news-search-box {
+            background: #fff; border-radius: 50px; box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+            padding: 10px 10px 10px 26px; display: flex; align-items: center; gap: 12px;
+        }
+        .news-search-box input {
+            border: none; outline: none; flex: 1; font-size: 1rem; padding: 10px 0; background: transparent;
+        }
+        .news-search-box .search-icon { color: #999; font-size: 1.1rem; }
+        .news-search-box .clear-btn {
+            border: none; background: #f2f2f2; color: #777; border-radius: 50%;
+            width: 32px; height: 32px; display: none; align-items: center; justify-content: center; cursor: pointer;
+        }
+        .news-search-box .clear-btn.show { display: flex; }
+        .news-result-count { font-size: .9rem; color: #777; margin-top: 14px; }
+        #no-news-results { display: none; text-align: center; padding: 60px 20px; color: #999; }
+        #no-news-results.show { display: block; }
+    </style>
 
-
-    <div class="section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-12 text-center" data-aos="fade-up">
-                    <h2 class="heading">Republic Day Weekend Specials</h2>
-                </div>
-            </div>
-
-            <div class="row align-items-stretch" id="blog-row-1">
-            </div>
-
-            <div class="row align-items-stretch mt-4" id="blog-row-2">
-            </div>
-
-            <nav class="mt-5" aria-label="Page navigation example" data-aos="fade-up" data-aos-delay="100">
-                <ul class="custom-pagination pagination">
-                    <li class="page-item prev"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item next"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </nav>
-
-        </div>      
-    </div>
-
-    
-    <div class="section">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-12" data-aos="fade-up" data-aos-delay="0">
-                    <h2 class="heading mb-5">Trending This Week</h2>
-                </div>
-            </div>
-            
-            <div class="row align-items-stretch" id="blog-row-3">
-            </div>  
-        </div>      
+    <div class="container news-search-wrap">
+        <div class="news-search-box" data-aos="fade-up">
+            <span class="fa-solid fa-magnifying-glass search-icon"></span>
+            <input type="text" id="news-search" placeholder="Search news — e.g. Auli, festival, Rann Utsav...">
+            <button class="clear-btn" id="news-search-clear" aria-label="Clear search">
+                <span class="fa-solid fa-xmark"></span>
+            </button>
+        </div>
+        <p class="news-result-count" id="news-result-count"></p>
     </div>
 
     <div class="section bg-light">
         <div class="container">
 
-            <div class="row">
-                <div class="col-12" data-aos="fade-up" data-aos-delay="0">
-                    <h2 class="heading mb-5">Latest Travel News</h2>
-                </div>
-            </div>
-
             <div class="row align-items-stretch" id="news-row">
+            </div>
+            <div id="no-news-results">
+                <span class="fa-solid fa-newspaper" style="font-size:2.4rem;"></span>
+                <h4 class="mt-3">No news matches your search</h4>
+                <p>Try a different destination or keyword.</p>
             </div>
         </div>
     </div>
@@ -256,7 +243,6 @@
 
 
          
-        <script src="js/data.js"></script>
         <script src="js/news-data.js"></script>
 
         <script src="js/bootstrap.bundle.min.js"></script>
@@ -274,38 +260,31 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", function() {
-                // Check if data loaded
-                if (typeof travelData === 'undefined') {
-                    console.error("travelData is missing! Check if js/data.js is loaded correctly.");
+                if (typeof newsData === 'undefined') {
+                    console.error("newsData is missing! Check if js/news-data.js is loaded correctly.");
                     return;
                 }
 
-                const keys = Object.keys(travelData);
-                
-                // Helper to create HTML for one card
-                function createCardHTML(key, delay) {
-                    const item = travelData[key];
-                    // Truncate story content to 100 chars
-                    const shortDesc = item.story.content.substring(0, 100) + "...";
-                    // Use the first event date, or a default
-                    const dateDisplay = (item.events && item.events.length > 0) ? item.events[0].date : "Jan 2026";
-                    
+                const newsContainer = document.getElementById("news-row");
+                const noResults = document.getElementById("no-news-results");
+                const resultCount = document.getElementById("news-result-count");
+                const searchInput = document.getElementById("news-search");
+                const clearBtn = document.getElementById("news-search-clear");
+
+                function cardHTML(item, delay) {
                     return `
-                    <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="${delay}">
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 news-card-col" data-aos="fade-up" data-aos-delay="${delay}"
+                         data-title="${item.title.toLowerCase()}" data-summary="${item.summary.toLowerCase()}" data-dest="${item.destId.toLowerCase()}">
                         <div class="media-entry">
-                            <a href="view.html?id=${key}">
-                                <img src="${item.heroImage}" alt="${item.name}" class="img-fluid">
+                            <a href="news.html?id=${item.id}">
+                                <img src="${item.image}" alt="${item.title}" class="img-fluid" onerror="this.src='images/fallback.jpg'">
                             </a>
                             <div class="bg-white m-body">
-                                <span class="date">${dateDisplay}</span>
-                                <h3><a href="view.html?id=${key}">${item.name}: ${item.tagline}</a></h3>
-                                <p>${shortDesc}</p>
-                                <a href="view.html?id=${key}" class="more d-flex align-items-center float-start">
-                                    <span class="label">Read More</span>
-                                    <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
-                                </a>
-                                <a href="itinerary.html?id=${key}" class="more d-flex align-items-center float-end" style="color:#f17945;">
-                                    <span class="label">Itinerary</span>
+                                <span class="date">${item.date}</span>
+                                <h3><a href="news.html?id=${item.id}">${item.title}</a></h3>
+                                <p>${item.summary}</p>
+                                <a href="news.html?id=${item.id}" class="more d-flex align-items-center float-start">
+                                    <span class="label">Learn More</span>
                                     <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
                                 </a>
                             </div>
@@ -313,60 +292,47 @@
                     </div>`;
                 }
 
-                // Function to fill a specific container row with a slice of data
-                function fillRow(containerId, startIdx, endIdx) {
-                    const container = document.getElementById(containerId);
-                    if (!container) return;
-
-                    let html = "";
+                function renderAll() {
                     let delay = 100;
-                    // Slice the keys for this specific row
-                    const rowKeys = keys.slice(startIdx, endIdx);
-
-                    rowKeys.forEach(key => {
-                        html += createCardHTML(key, delay);
-                        delay += 100; // Stagger animation
-                    });
-
-                    container.innerHTML = html;
-                }
-
-                // Fill Row 1 (First 4 items)
-                fillRow("blog-row-1", 0, 4);
-
-                // Fill Row 2 (Next 4 items)
-                fillRow("blog-row-2", 4, 8);
-
-                // Fill Row 3 (Last 4 items)
-                fillRow("blog-row-3", 8, 12);
-
-                // ---- Latest Travel News ----
-                if (typeof newsData !== 'undefined') {
-                    const newsContainer = document.getElementById("news-row");
-                    let newsHtml = "";
-                    let delay = 100;
-                    newsData.forEach(item => {
-                        newsHtml += `
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="${delay}">
-                            <div class="media-entry">
-                                <a href="news.html?id=${item.id}">
-                                    <img src="${item.image}" alt="${item.title}" class="img-fluid" onerror="this.src='images/fallback.jpg'">
-                                </a>
-                                <div class="bg-white m-body">
-                                    <span class="date">${item.date}</span>
-                                    <h3><a href="news.html?id=${item.id}">${item.title}</a></h3>
-                                    <p>${item.summary}</p>
-                                    <a href="news.html?id=${item.id}" class="more d-flex align-items-center float-start">
-                                        <span class="label">Learn More</span>
-                                        <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>`;
+                    newsContainer.innerHTML = newsData.map(item => {
+                        const html = cardHTML(item, delay);
                         delay += 100;
-                    });
-                    newsContainer.innerHTML = newsHtml;
+                        return html;
+                    }).join("");
+                    resultCount.innerText = `Showing all ${newsData.length} news stories`;
                 }
+                renderAll();
+
+                function runSearch() {
+                    const q = searchInput.value.trim().toLowerCase();
+                    clearBtn.classList.toggle("show", q.length > 0);
+
+                    if (!q) {
+                        document.querySelectorAll(".news-card-col").forEach(el => el.style.display = "");
+                        noResults.classList.remove("show");
+                        resultCount.innerText = `Showing all ${newsData.length} news stories`;
+                        return;
+                    }
+
+                    let visible = 0;
+                    document.querySelectorAll(".news-card-col").forEach(el => {
+                        const match = el.dataset.title.includes(q) || el.dataset.summary.includes(q) || el.dataset.dest.includes(q);
+                        el.style.display = match ? "" : "none";
+                        if (match) visible++;
+                    });
+
+                    resultCount.innerText = visible > 0
+                        ? `Found ${visible} stor${visible > 1 ? "ies" : "y"} matching "${searchInput.value}"`
+                        : `No results for "${searchInput.value}"`;
+                    noResults.classList.toggle("show", visible === 0);
+                }
+
+                searchInput.addEventListener("input", runSearch);
+                clearBtn.addEventListener("click", () => {
+                    searchInput.value = "";
+                    runSearch();
+                    searchInput.focus();
+                });
             });
         </script>
     </body>
