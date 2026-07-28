@@ -26,6 +26,8 @@
 	<link rel="stylesheet" href="css/flatpickr.min.css">
 	<link rel="stylesheet" href="css/glightbox.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/mobile-app.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
 	<title>Contact us</title>
@@ -35,7 +37,7 @@
 	<div class="site-mobile-menu site-navbar-target">
 		<div class="site-mobile-menu-header">
 			<div class="site-mobile-menu-close">
-				<span class="icofont-close js-menu-toggle"></span>
+				<span class="fa-solid fa-xmark js-menu-toggle"></span>
 			</div>
 		</div>
 		<div class="site-mobile-menu-body"></div>
@@ -104,13 +106,13 @@
 					<div class="contact-info">
 
 						<div class="address mt-4">
-							<i class="icon-room"></i>
+							<i class="fa-solid fa-location-dot"></i>
 							<h4 class="mb-2">Location:</h4>
 							<p>Parul University, Vaghodia Subdistrict, Vadodara-391760</p>
 						</div>
 
 						<div class="open-hours mt-4">
-							<i class="icon-clock-o"></i>
+							<i class="fa-regular fa-clock"></i>
 							<h4 class="mb-2">Open Hours:</h4>
 							<p>
 								Sunday-Friday:<br>
@@ -119,13 +121,13 @@
 						</div>
 
 						<div class="email mt-4">
-							<i class="icon-envelope"></i>
+							<i class="fa-solid fa-envelope"></i>
 							<h4 class="mb-2">Email:</h4>
 							<p>tsrumith@gmail.com </p>
 						</div>
 
 						<div class="phone mt-4">
-							<i class="icon-phone"></i>
+							<i class="fa-solid fa-phone"></i>
 							<h4 class="mb-2">Call:</h4>
 							<p>+91 6303840702</p>
 						</div>
@@ -135,10 +137,10 @@
 				<div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
 					<form action="#">
 						<div class="row">
-							<div class="col-6 mb-3">
+							<div class="col-sm-6 mb-3">
 								<input type="text" class="form-control" placeholder="Your Name">
 							</div>
-							<div class="col-6 mb-3">
+							<div class="col-sm-6 mb-3">
 								<input type="email" class="form-control" placeholder="Your Email">
 							</div>
 							<div class="col-12 mb-3">
@@ -198,12 +200,12 @@
 					<div class="widget">
 						<h3>Connect</h3>
 						<ul class="list-unstyled social">
-							<li><a href="#"><span class="icon-instagram"></span></a></li>
-							<li><a href="#"><span class="icon-twitter"></span></a></li>
-							<li><a href="#"><span class="icon-facebook"></span></a></li>
-							<li><a href="#"><span class="icon-linkedin"></span></a></li>
-							<li><a href="#"><span class="icon-pinterest"></span></a></li>
-							<li><a href="#"><span class="icon-dribbble"></span></a></li>
+							<li><a href="#"><span class="fa-brands fa-instagram"></span></a></li>
+							<li><a href="#"><span class="fa-brands fa-x-twitter"></span></a></li>
+							<li><a href="#"><span class="fa-brands fa-facebook-f"></span></a></li>
+							<li><a href="#"><span class="fa-brands fa-linkedin-in"></span></a></li>
+							<li><a href="#"><span class="fa-brands fa-pinterest-p"></span></a></li>
+							<li><a href="#"><span class="fa-brands fa-dribbble"></span></a></li>
 						</ul>
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-3 -->
@@ -278,5 +280,15 @@
 		<script src="js/custom.js"></script>
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4666867149127695"
      crossorigin="anonymous"></script>
-	</body>
+	
+    <nav class="app-tabbar">
+        <a href="index.html" data-page="index.html"><span class="fa-solid fa-house"></span>Home</a>
+        <a href="destinations.html" data-page="destinations.html,view.html,place.html,itinerary.html"><span class="fa-solid fa-compass"></span>Explore</a>
+        <a href="blog.html" data-page="blog.html,news.html"><span class="fa-solid fa-newspaper"></span>Blog</a>
+        <a href="about.html" data-page="about.html,privacy-policy.html"><span class="fa-solid fa-circle-info"></span>About</a>
+        <a href="contact.html" data-page="contact.html"><span class="fa-solid fa-envelope"></span>Contact</a>
+    </nav>
+
+    <script src="js/mobile-app.js"></script>
+</body>
 	</html>

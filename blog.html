@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/flatpickr.min.css">
     <link rel="stylesheet" href="css/glightbox.min.css">
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/mobile-app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
@@ -68,7 +69,7 @@
     <div class="site-mobile-menu site-navbar-target">
         <div class="site-mobile-menu-header">
             <div class="site-mobile-menu-close">
-                <span class="icofont-close js-menu-toggle"></span>
+                <span class="fa-solid fa-xmark js-menu-toggle"></span>
             </div>
         </div>
         <div class="site-mobile-menu-body"></div>
@@ -125,7 +126,7 @@
                     <div data-aos="fade-up">
                         <a href="images/india.mp4" class="play-button align-items-center d-flex glightbox3" >
                             <span class="icon-button me-3">
-                                <span class="icon-play"></span>
+                                <span class="fa-solid fa-play"></span>
                             </span>
                             <span class="caption">Watch Video</span>
                         </a>
@@ -192,12 +193,12 @@
                     </div> <div class="widget">
                         <h3>Connect</h3>
                         <ul class="list-unstyled social">
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                            <li><a href="#"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                            <li><a href="#"><span class="icon-pinterest"></span></a></li>
-                            <li><a href="#"><span class="icon-dribbble"></span></a></li>
+                            <li><a href="#"><span class="fa-brands fa-instagram"></span></a></li>
+                            <li><a href="#"><span class="fa-brands fa-x-twitter"></span></a></li>
+                            <li><a href="#"><span class="fa-brands fa-facebook-f"></span></a></li>
+                            <li><a href="#"><span class="fa-brands fa-linkedin-in"></span></a></li>
+                            <li><a href="#"><span class="fa-brands fa-pinterest-p"></span></a></li>
+                            <li><a href="#"><span class="fa-brands fa-dribbble"></span></a></li>
                         </ul>
                     </div> </div> <div class="col-lg-2 ml-auto">
                     <div class="widget">
@@ -286,7 +287,7 @@
                                 <p>${item.summary}</p>
                                 <a href="news.html?id=${item.id}" class="more d-flex align-items-center float-start">
                                     <span class="label">Learn More</span>
-                                    <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
+                                    <span class="arrow"><span class="fa-solid fa-chevron-right"></span></span>
                                 </a>
                             </div>
                         </div>
@@ -336,5 +337,15 @@
                 });
             });
         </script>
-    </body>
+    
+    <nav class="app-tabbar">
+        <a href="index.html" data-page="index.html"><span class="fa-solid fa-house"></span>Home</a>
+        <a href="destinations.html" data-page="destinations.html,view.html,place.html,itinerary.html"><span class="fa-solid fa-compass"></span>Explore</a>
+        <a href="blog.html" data-page="blog.html,news.html"><span class="fa-solid fa-newspaper"></span>Blog</a>
+        <a href="about.html" data-page="about.html,privacy-policy.html"><span class="fa-solid fa-circle-info"></span>About</a>
+        <a href="contact.html" data-page="contact.html"><span class="fa-solid fa-envelope"></span>Contact</a>
+    </nav>
+
+    <script src="js/mobile-app.js"></script>
+</body>
 </html>

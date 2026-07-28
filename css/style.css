@@ -9996,8 +9996,12 @@ textarea {
       font-size: 14px; }
 
 .quote {
-  font-size: 5em;
-  line-height: 0; }
+  font-size: 3.5em;
+  line-height: 1;
+  color: #f17945;
+  opacity: .35;
+  margin-bottom: 6px;
+  display: block; }
 
 .wide-slider-testimonial {
   display: -webkit-box;
@@ -10591,6 +10595,116 @@ textarea {
   .privacy-policy p,
   .privacy-policy ul li {
     font-size: 15px;
+  }
+}
+
+/* ================================
+   Site-wide mobile friendliness
+================================ */
+
+/* Never allow any element to force horizontal scrolling on small screens */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, video, iframe, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Comfortable base sizing on small phones */
+@media (max-width: 575.98px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  h1, .h1 { font-size: 1.9rem; }
+  h2, .h2 { font-size: 1.6rem; }
+  h3, .h3 { font-size: 1.3rem; }
+
+  .hero .heading {
+    font-size: 26px;
+  }
+
+  .section .heading {
+    font-size: 26px;
+  }
+
+  .section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  /* Buttons and form controls easy to tap and read */
+  .btn, .form-control {
+    font-size: 16px; /* prevents iOS auto-zoom on focus */
+  }
+
+  .btn {
+    min-height: 44px;
+  }
+
+  /* Off-canvas mobile menu should never exceed the viewport width */
+  .site-mobile-menu {
+    width: 85vw;
+    max-width: 320px;
+  }
+
+  /* Footer widgets get comfortable spacing when stacked */
+  .site-footer {
+    padding: 45px 0;
+    text-align: center;
+  }
+
+  .site-footer .widget {
+    margin-bottom: 30px;
+  }
+
+  .site-footer .widget .links {
+    width: auto;
+    display: inline-block;
+  }
+
+  .site-footer .social {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+  }
+
+  /* Testimonials and cards keep readable padding without feeling cramped */
+  .block-testimonial {
+    padding: 22px;
+  }
+
+  /* Destination / news search pills stay usable at narrow widths */
+  .dest-search-box,
+  .news-search-box {
+    padding: 8px 8px 8px 18px;
+    border-radius: 30px;
+  }
+}
+
+/* Slightly larger tap targets for icon-only controls on touch devices */
+@media (max-width: 767.98px) {
+  .site-footer .social li a {
+    width: 36px;
+    height: 36px;
+  }
+
+  #destination-controls .next,
+  #destination-controls .prev,
+  #prevnext-testimonial .next,
+  #prevnext-testimonial .prev {
+    width: 56px;
+    height: 56px;
   }
 }
 

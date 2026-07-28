@@ -1,0 +1,154 @@
+/* ============================================================
+   Oak — Mobile App Shell
+   Fixed bottom tab bar, auto-hiding header, smooth momentum
+   scrolling and tap feedback for a native-app feel on phones.
+   Only takes effect below 992px (Bootstrap's lg breakpoint) —
+   desktop layout is untouched.
+============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Top nav glides away on scroll-down, glides back on scroll-up,
+   just like a native app header. */
+@media (max-width: 991.98px) {
+  .site-nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    margin-top: 0 !important;
+    background: rgba(255, 255, 255, 0.96);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+    padding: 10px 0;
+  }
+
+  .site-nav.oak-nav-hidden {
+    transform: translateY(-100%);
+  }
+
+  .site-nav .logo {
+    color: #1A374D !important;
+  }
+
+  .site-nav .burger.light:before,
+  .site-nav .burger.light span,
+  .site-nav .burger.light:after {
+    background: #1A374D;
+  }
+
+  /* Push page content below the now-fixed header */
+  body:not(.no-fixed-nav-offset) > .hero,
+  body:not(.no-fixed-nav-offset) > #itin-hero,
+  body:not(.no-fixed-nav-offset) > #place-hero,
+  body:not(.no-fixed-nav-offset) > .dynamic-hero,
+  body:not(.no-fixed-nav-offset) > .dest-hero,
+  body:not(.no-fixed-nav-offset) > .itin-hero {
+    margin-top: 56px;
+  }
+}
+
+/* Reserve space at the bottom of the page so content never sits
+   under the fixed tab bar */
+@media (max-width: 991.98px) {
+  body.has-app-tabbar {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ---------- Bottom tab bar ---------- */
+.app-tabbar {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .app-tabbar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: #fff;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.1);
+    padding: 8px 4px calc(8px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .app-tabbar a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: #9aa0a8;
+    text-decoration: none;
+    font-size: .66rem;
+    font-weight: 600;
+    letter-spacing: .2px;
+    padding: 6px 2px;
+    border-radius: 12px;
+    transition: color .2s ease, background .2s ease, transform .15s ease;
+  }
+
+  .app-tabbar a span[class*="fa-"] {
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+
+  .app-tabbar a.active {
+    color: #f17945;
+  }
+
+  .app-tabbar a:active {
+    transform: scale(0.9);
+    background: #f7f2ef;
+  }
+}
+
+/* ---------- Itinerary page: sticky day-tabs bar must sit below the fixed header ---------- */
+@media (max-width: 991.98px) {
+  .day-tabs-wrap {
+    top: 56px !important;
+  }
+
+  .day-section {
+    scroll-margin-top: 140px !important;
+  }
+}
+
+/* ---------- General tap feedback for an app-like touch response ---------- */
+@media (max-width: 991.98px) {
+  .btn:active,
+  .btn-plan-trip:active,
+  .btn-oak:active,
+  .dest-card .btn-view:active,
+  .dest-card .btn-itin:active,
+  .day-tab-btn:active,
+  a.play-button:active {
+    transform: scale(0.96);
+  }
+
+  .btn,
+  .btn-plan-trip,
+  .btn-oak,
+  .dest-card .btn-view,
+  .dest-card .btn-itin,
+  .day-tab-btn,
+  a.play-button {
+    transition: transform .15s ease;
+  }
+}
