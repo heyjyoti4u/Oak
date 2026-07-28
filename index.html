@@ -84,6 +84,10 @@
 							<li class="cta-button"><a href="contact.html">Contact Us</a></li>
 						</ul>
 
+						<button id="pwaInstallBtn" type="button" style="display:none; padding:6px 14px; font-size:13px; border:none; border-radius:20px; background:#000; color:#fff; cursor:pointer; margin-right:10px;">
+							<span class="fa-solid fa-download" style="margin-right:5px;"></span>Install App
+						</button>
+
 						<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
 							<span></span>
 						</a>
@@ -574,5 +578,42 @@
     </nav>
 
     <script src="js/mobile-app.js"></script>
+
+    <script>
+        let deferredInstallPrompt = null;
+        const pwaInstallBtn = document.getElementById('pwaInstallBtn');
+
+        window.addEventListener('beforeinstallprompt', function (e) {
+            e.preventDefault();
+            deferredInstallPrompt = e;
+            if (pwaInstallBtn) {
+                pwaInstallBtn.style.display = 'inline-block';
+            }
+        });
+
+        if (pwaInstallBtn) {
+            pwaInstallBtn.addEventListener('click', function () {
+                if (!deferredInstallPrompt) return;
+                deferredInstallPrompt.prompt();
+                deferredInstallPrompt.userChoice.finally(function () {
+                    deferredInstallPrompt = null;
+                    pwaInstallBtn.style.display = 'none';
+                });
+            });
+        }
+
+        window.addEventListener('appinstalled', function () {
+            if (pwaInstallBtn) {
+                pwaInstallBtn.style.display = 'none';
+            }
+            deferredInstallPrompt = null;
+        });
+
+        if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+            if (pwaInstallBtn) {
+                pwaInstallBtn.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 	</html>
